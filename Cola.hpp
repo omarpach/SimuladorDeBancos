@@ -97,7 +97,7 @@ void Cola<T>::Desencolar(){
   if (EstaVacia()) throw EstaVacia();
   Elemento* aux = frente;
   frente = frente->siguiente;
-  if (tam == 0) fondo = NULL;
+  if (tam == 1) fondo -> siguiente = NULL;
   delete aux;
   --tam;
 }
