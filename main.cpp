@@ -8,45 +8,58 @@
 using namespace std;
 
 int main(){
-  int agregarCliente;
-  int eliminarCliente;
-  Cola<int> clientes;
+    int tiempoTotal;
+    int agregarCliente, eliminarCliente;
+    Cola<int> clientes;
 
-  cout << "Numero de turnos: 100\n" << endl;
-  srand(time(NULL));
-  agregarCliente = rand() % 10 + 1;
-  eliminarCliente = rand() % 10 + 1;
+    srand(time(nullptr));
 
-  for (int i = 0; i < 100; ++i){
-    cout << "Reloj: " << i << "s\n" << endl;
-    cout << "Cola: ";
-    clientes.Imprimir();
-    cout << "Tiempo para agregar un cliente: " << agregarCliente << endl;
-    cout << "Tiempo para elimnar un cliente: " << eliminarCliente << endl;
+    agregarCliente = 1 + rand() % 10;
+    eliminarCliente = 1 + rand() % 10;
+    tiempoTotal = 120 + rand() % 240;
 
-    if (agregarCliente == 0){
-      clientes.Encolar(i);
-      cout << "Se agregó un cliente: ";
-      clientes.Imprimir();
-      agregarCliente = rand() % 10 + 1;
+    try{
+        for(int i = 1; i <= tiempoTotal; ++i){
+          
+            cout << "Reloj: " << i << "s\n" << endl;
+
+            cout << "Cola: ";
+            clientes.Imprimir();
+            cout << "Tiempo para agregar un cliente: " << agregarCliente << endl;
+            cout << "Tiempo para elimnar un cliente: " << eliminarCliente << endl;
+
+            if(agregarCliente == 0){
+                clientes.Encolar(i);
+                cout << "Se agregó un cliente: ";
+                clientes.Imprimir();
+                agregarCliente = 1 + rand() % 10;
+            }
+
+            if(eliminarCliente == 0){
+                if(!clientes.EstaVacia()){
+                    clientes.Desencolar();
+                    cout << "Se eliminó un cliente: ";
+                    clientes.Imprimir();
+                }
+                eliminarCliente = 1 + rand() % 10;
+            }
+
+            --eliminarCliente;
+            --agregarCliente;
+
+             this_thread::sleep_for(chrono::seconds(1));
+             system("clear");
+        }
+    }catch(Cola<int>::ColaVacia & exc){
+        cerr << "Error: " << exc.what() << endl;
+    }catch(...){
+        cerr << "Error inesperado...";
     }
-    if (eliminarCliente == 0){
-      try {
-        clientes.Desencolar();
-        cout << "Se eliminó un cliente: ";
-        clientes.Imprimir();
-      } catch (const char* e) {
-        cerr << "Error: " << e << endl;
-      }
-      eliminarCliente = rand() % 10 + 1;
-    }
 
-    --agregarCliente;
-    --eliminarCliente;
 
-    this_thread::sleep_for(chrono::seconds(1));
-    system("clear");
-  }
+
+   
+  
 
   return 0;
 }
