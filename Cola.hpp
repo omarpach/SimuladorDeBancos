@@ -2,6 +2,7 @@
 #define COLAS_HPP_INCLUDED
 
 #include <iostream>
+#include <exception>
 
 template <typename T>
 class Cola{
@@ -27,6 +28,11 @@ public:
   bool EstaVacia();
   void Vaciar();
   void Imprimir();
+
+  class ColaVacia : public std::exception{
+    public:
+        virtual const char* what() const throw();
+  };
 };
 
 // ******** Métodos indispensables
@@ -88,7 +94,7 @@ bool Cola<T>::EstaVacia(){
 
 template<typename T>
 void Cola<T>::Desencolar(){
-  if (EstaVacia()) throw "La cola está vacía";
+  if (EstaVacia()) throw EstaVacia();
   Elemento* aux = frente;
   frente = frente->siguiente;
   if (tam == 0) fondo = NULL;
@@ -103,11 +109,13 @@ int Cola<T>::ObtenerTam(){
 
 template <typename T>
 T Cola<T>::ObtenerTope(){
+  if(EstaVacia()) throw EstaVacia();
   return frente->valor;
 }
 
 template <typename T>
 T Cola<T>::ObtenerFondo(){
+  if(EstaVacia()) throw EstaVacia();
   return fondo->valor;
 }
 
@@ -132,6 +140,13 @@ void Cola<T>::Vaciar(){
   while (!EstaVacia()){
     Desencolar();
   }
+}
+
+
+template <typename T>
+const char* Cola<T>::ColaVacia::what() const throw()
+{
+    return "Se intent\242 manipular una cola vacia...";
 }
 
 #endif // !COLAS_HPP_INCLUDED
