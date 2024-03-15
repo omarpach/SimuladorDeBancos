@@ -20,7 +20,7 @@ int main(){
 
     try{
         for(int i = 1; i <= tiempoTotal; ++i){
-          
+
             cout << "Reloj: " << i << "s\n" << endl;
 
             cout << "Cola: ";
@@ -30,25 +30,25 @@ int main(){
 
             if(agregarCliente == 0){
                 clientes.Encolar(i);
-                cout << "Se agregÃ³ un cliente: ";
+                cout << "Se agregó un cliente: ";
                 clientes.Imprimir();
-                agregarCliente = 1 + rand() % 10;
+                agregarCliente = 2 + rand() % 10;
             }
 
             if(eliminarCliente == 0){
                 if(!clientes.EstaVacia()){
                     clientes.Desencolar();
-                    cout << "Se eliminÃ³ un cliente: ";
+                    cout << "Se eliminó un cliente: ";
                     clientes.Imprimir();
                 }
-                eliminarCliente = 1 + rand() % 10;
+                eliminarCliente = 2 + rand() % 10;
             }
 
             --eliminarCliente;
             --agregarCliente;
 
              this_thread::sleep_for(chrono::seconds(1));
-             system("clear");
+             system("cls");
         }
     }catch(Cola<int>::ColaVacia & exc){
         cerr << "Error: " << exc.what() << endl;
@@ -58,8 +58,8 @@ int main(){
 
 
 
-   
-  
+
+
 
   return 0;
 }
