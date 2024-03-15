@@ -1,3 +1,4 @@
 # Ignore build and cache directory (clangd files)
 build/
 .cache/
+.clang-tidy
