@@ -9,7 +9,7 @@ using std::string;
 class Banco {
 private:
   int numDeCajas = 3;
-  int tiempoTotalDeAtención;
+  int tiempoTotalDeAtencion;
   int reloj;
   int tamNombres;
   string* nombres = nullptr;
@@ -19,6 +19,7 @@ private:
     string cliente;
     int tiempoDeAtencion;
     int tiempoTranscurrido;
+    void Imprimir();
   };
   Caja* cajas;
 
@@ -32,6 +33,8 @@ public:
   void LeerNombres(const char* archivo);
   string ObtenerNombre(int indice);
   string ObtenerNombreAleatorio();
+  int ObtenerTiempoTotalDeAtencion();
+  int ObtenerReloj();
   void ActualizarCajas();
   void Imprimir();
   void ImprimirCajas();

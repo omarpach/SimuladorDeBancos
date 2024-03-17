@@ -13,7 +13,7 @@ using std::string;
 Banco::Banco() {
   std::srand(std::time(nullptr));
   this->tamNombres = 0;
-  this->tiempoTotalDeAtención = 120 + rand() % 120;
+  this->tiempoTotalDeAtencion = 120 + rand() % 120;
   this->reloj = 0;
   this->cajas = new Caja[numDeCajas];
 }
@@ -44,4 +44,21 @@ void Banco::LeerNombres(const char *archivo) {
 string Banco::ObtenerNombreAleatorio(){
   int i = rand() % tamNombres;
   return nombres[i];
+}
+
+string Banco::ObtenerNombre(int indice) {
+  return nombres[indice];
+}
+
+int Banco::ObtenerTiempoTotalDeAtencion() {
+  return tiempoTotalDeAtencion;
+}
+
+int Banco::ObtenerReloj() {
+  return reloj;
+}
+
+void Banco::Caja::Imprimir() {
+  std::cout << "La caja está atendiendo a " << cliente << "   ";
+  std::cout << "Tiempo de atención: " << tiempoTranscurrido;
 }

@@ -13,6 +13,8 @@ using namespace std;
 int main() {
   try {
     Banco b;
+    std::cout << "La caja atenderá a cuantas personas pueda en "
+      << b.ObtenerTiempoTotalDeAtencion() << " minutos." << endl;
     b.LeerNombres("resources/Clientes.txt");
     for (int i = 0; i < 3; ++i) {
       cout << b.ObtenerNombreAleatorio() << endl;
