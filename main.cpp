@@ -1,5 +1,7 @@
-#include "lib/Cola.hpp"
+#include "Cola.hpp"
 #include "Banco.hpp"
+#include <chrono>
+#include <thread>
 /* #include <chrono>
 #include <cstdlib>
 #include <ctime>
@@ -12,16 +14,23 @@ using namespace std;
 
 int main() {
   try {
-    Banco b;
-    std::cout << "La caja atenderá a cuantas personas pueda en "
-      << b.ObtenerTiempoTotalDeAtencion() << " minutos." << endl;
-    b.LeerNombres("resources/Clientes.txt");
-    for (int i = 0; i < 3; ++i) {
-      cout << b.ObtenerNombreAleatorio() << endl;
+    Banco banco;
+    banco.LeerNombres("Clientes.txt");
+
+    int tiempoTotal = banco.ObtenerTiempoTotal();
+
+    for (int i = 1; i <= tiempoTotal; ++i) {
+       cout << "Reloj: " << i << endl;
+       banco.Imprimir();
+       banco.ActualizarCola();
+       banco.ActualizarCajas();
+       this_thread::sleep_for(chrono::seconds(1));
+       system("cls");
     }
-  }
-  catch (const char* e) {
+  }catch (const char* e) {
     cerr << "Error: " << e << endl;
+  }catch(...){
+    cerr << "Error inesperado..." << endl;
   }
 }
 
@@ -52,7 +61,7 @@ int main() {
       if (agregarCliente == 0) {
         clientes.Encolar(NuevoCliente(numPersona));
         cout << numPersona << endl;
-        cout << "Se agregó un cliente: ";
+        cout << "Se agregï¿½ un cliente: ";
         ++numPersona;
         clientes.Imprimir();
         agregarCliente = 2 + rand() % 10;
@@ -60,7 +69,7 @@ int main() {
       if (eliminarCliente == 0) {
         if (!clientes.EstaVacia()) {
           clientes.Desencolar();
-          cout << "Se eliminó un cliente: ";
+          cout << "Se eliminï¿½ un cliente: ";
           clientes.Imprimir();
         }
         eliminarCliente = 2 + rand() % 10;

@@ -1,7 +1,7 @@
 #ifndef BANCO_HPP_INCLUDED
 #define BANCO_HPP_INCLUDED
 
-#include "lib/Cola.hpp"
+#include "Cola.hpp"
 #include <string>
 
 using std::string;
@@ -10,16 +10,19 @@ class Banco {
 private:
   int numDeCajas = 3;
   int tiempoTotalDeAtencion;
-  int reloj;
+  //int reloj;
   int tamNombres;
+  int agregarClienteCola;
+  int eliminarClienteCola;
   string* nombres = nullptr;
   Cola<string> clientes;
   Cola<string> clientesAtendidos;
   struct Caja {
     string cliente;
     int tiempoDeAtencion;
-    int tiempoTranscurrido;
-    void Imprimir();
+    int tiempoTranscurrido = 0;
+    void Actualizar(Cola<string> &clientes);
+    void Imprimir() const;
   };
   Caja* cajas;
 
@@ -33,11 +36,11 @@ public:
   void LeerNombres(const char* archivo);
   string ObtenerNombre(int indice);
   string ObtenerNombreAleatorio();
-  int ObtenerTiempoTotalDeAtencion();
-  int ObtenerReloj();
   void ActualizarCajas();
-  void Imprimir();
-  void ImprimirCajas();
+  void ActualizarCola();
+  void Imprimir() const;
+  void ImprimirCajas() const;
+  int ObtenerTiempoTotal() const;
 };
 
 #endif // !BANCO_HPP_INCLUDED
