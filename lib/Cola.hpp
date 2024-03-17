@@ -89,25 +89,28 @@ template <typename T> Cola<T> &Cola<T>::operator=(const Cola<T> &cola) {
 /******************************************************************************************/
 
 template <typename T> void Cola<T>::Encolar(T valor) {
-  Elemento *nuevo =
-      new Elemento(valor, EstaVacia() ? nullptr : fondo->siguiente);
-  (EstaVacia() ? nuevo->siguiente : fondo->siguiente) = nuevo;
-  fondo = nuevo;
-  ++tam;
+  if(EstaVacia()){
+        fondo = new Elemento(valor, fondo);
+        fondo -> siguiente = fondo;
+    }
+    else{
+        Elemento *aux = fondo;
+        fondo = new Elemento(valor, nullptr);
+        fondo -> siguiente = aux -> siguiente;
+        aux -> siguiente = fondo;
+    }
+    ++tam;
 }
 
 /******************************************************************************************/
 
 template <typename T> void Cola<T>::Desencolar() {
-  if (EstaVacia())
-    throw EstaVacia();
-  Elemento *aux = fondo->siguiente;
-  if (tam > 1)
-    fondo->siguiente = aux->siguiente;
-  else
-    fondo = nullptr;
-  delete aux;
-  --tam;
+  if(EstaVacia()) throw EstaVacia();
+    Elemento *aux = fondo -> siguiente;
+    fondo -> siguiente = aux -> siguiente;
+    if(fondo == fondo -> siguiente) fondo = nullptr;
+    delete aux;
+    --tam;
 }
 
 /******************************************************************************************/
