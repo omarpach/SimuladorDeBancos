@@ -47,125 +47,150 @@ private:
 
 /******************************************************************************************/
 
-template <typename T>
-Cola<T>::Elemento::Elemento(T valor, Elemento *siguiente /* = NULL */) {
+template<typename T>
+Cola<T>::Elemento::Elemento(T valor, Elemento* siguiente /* = NULL */){
   this->valor = valor;
   this->siguiente = siguiente;
 }
 
 /******************************************************************************************/
 
-template <typename T> Cola<T>::Cola() {
-  tam = 0;
-  fondo = nullptr;
+template <typename T>
+Cola<T>::Cola()
+{
+    tam = 0;
+    fondo = nullptr;
 }
-
-/******************************************************************************************/
-
-template <typename T> Cola<T>::~Cola() { Vaciar(); }
 
 /******************************************************************************************/
 
 template <typename T>
-Cola<T>::Cola(const Cola<T> &cola) : tam(0), fondo(nullptr) {
-  *this = cola;
+Cola<T>::~Cola()
+{
+    Vaciar();
 }
 
 /******************************************************************************************/
 
-template <typename T> Cola<T> &Cola<T>::operator=(const Cola<T> &cola) {
-  if (this == &cola)
+template <typename T>
+Cola<T>::Cola(const Cola<T>& cola) : tam(0), fondo(nullptr)
+{
+    *this = cola;
+}
+
+/******************************************************************************************/
+
+template <typename T>
+Cola<T>& Cola<T>::operator=(const Cola<T>& cola)
+{
+    if(this == &cola) return *this;
+
+    Vaciar();
+    Elemento *actual = cola.fondo -> siguiente;
+    while(actual != nullptr){
+        Encolar(actual -> valor);
+        actual = actual -> siguiente;
+    }
     return *this;
-
-  Vaciar();
-  Elemento *actual = cola.fondo->siguiente;
-  while (actual != nullptr) {
-    Encolar(actual->valor);
-    actual = actual->siguiente;
-  }
-  return *this;
 }
 
 /******************************************************************************************/
 
-template <typename T> void Cola<T>::Encolar(T valor) {
-  if(EstaVacia()){
-        fondo = new Elemento(valor, fondo);
-        fondo -> siguiente = fondo;
-    }
-    else{
-        Elemento *aux = fondo;
-        fondo = new Elemento(valor, nullptr);
-        fondo -> siguiente = aux -> siguiente;
-        aux -> siguiente = fondo;
-    }
-    ++tam;
+template <typename T>
+void Cola<T>::Encolar(T valor)
+{
+	Elemento * nuevo = new Elemento(valor, EstaVacia() ? nullptr : fondo -> siguiente);
+	(EstaVacia() ? nuevo -> siguiente : fondo -> siguiente) = nuevo;
+	fondo = nuevo;
+	++tam;
+
 }
 
 /******************************************************************************************/
 
-template <typename T> void Cola<T>::Desencolar() {
-  if(EstaVacia()) throw EstaVacia();
+template <typename T>
+void Cola<T>::Desencolar()
+{
+    if(EstaVacia()) throw ColaVacia();
     Elemento *aux = fondo -> siguiente;
-    fondo -> siguiente = aux -> siguiente;
-    if(fondo == fondo -> siguiente) fondo = nullptr;
+
+    if(tam > 1) fondo -> siguiente = aux -> siguiente;
+    else fondo = nullptr;
     delete aux;
     --tam;
+
 }
 
 /******************************************************************************************/
 
-template <typename T> int Cola<T>::ObtenerTam() const { return tam; }
-
-/******************************************************************************************/
-
-template <typename T> T Cola<T>::ObtenerFrente() const {
-  if (EstaVacia())
-    throw "La cola se encuentra vacía...";
-  return fondo->siguiente->valor;
+template <typename T>
+int Cola<T>::ObtenerTam() const
+{
+    return tam;
 }
 
 /******************************************************************************************/
 
-template <typename T> T Cola<T>::ObtenerFondo() const {
-  if (EstaVacia())
-    throw "La cola se encuentra vacía...";
-  return fondo->valor;
+template <typename T>
+T Cola<T>::ObtenerFrente() const
+{
+    if(EstaVacia()) throw ColaVacia();
+    return fondo -> siguiente -> valor;
 }
 
 /******************************************************************************************/
 
-template <typename T> bool Cola<T>::EstaVacia() const { return tam == 0; }
-
-/******************************************************************************************/
-
-template <typename T> void Cola<T>::Vaciar() {
-  while (!EstaVacia())
-    Desencolar();
+template <typename T>
+T Cola<T>::ObtenerFondo() const
+{
+    if(EstaVacia()) throw ColaVacia();
+    return fondo -> valor;
 }
 
 /******************************************************************************************/
 
-template <typename T> void Cola<T>::Imprimir() const {
-  if (EstaVacia())
-    std::cout << char(179) << ' ' << char(179) << std::endl;
-  else {
-    Elemento *actual = fondo->siguiente;
+template <typename T>
+bool Cola<T>::EstaVacia() const
+{
+    return tam == 0;
+}
 
-    std::cout << char(179);
-    for (int i = 0; i < tam; ++i) {
-      std::cout << actual->valor << ", ";
-      actual = actual->siguiente;
+/******************************************************************************************/
+
+template <typename T>
+void Cola<T>::Vaciar()
+{
+    while(!EstaVacia()) Desencolar();
+}
+
+/******************************************************************************************/
+
+template <typename T>
+void Cola<T>::Imprimir() const
+{
+    if(EstaVacia()) std::cout << char(179) << ' ' << char(179) << std::endl;
+    else{
+        Elemento *actual = fondo -> siguiente;
+
+        std::cout << char(179);
+        for(int i = 0; i < tam; ++i){
+            std::cout << actual -> valor << ", ";
+            actual = actual -> siguiente;
+        }
+        std::cout << "\b\b  ";
+        std::cout << char(179) << std::endl;
     }
-    std::cout << "\b\b  ";
-    std::cout << char(179) << std::endl;
-  }
+
+
 }
 
 /******************************************************************************************/
 
-template <typename T> const char *Cola<T>::ColaVacia::what() const throw() {
-  return "Se intent\242 desencolar una cola vacia...";
+template <typename T>
+const char* Cola<T>::ColaVacia::what() const throw()
+{
+    return "Se intent\242 modificar una cola vacia...";
 }
+
 
 #endif // COLA_HPP_INCLUDED
