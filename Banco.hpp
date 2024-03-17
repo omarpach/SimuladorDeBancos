@@ -10,7 +10,6 @@ class Banco {
 private:
   int numDeCajas = 3;
   int tiempoTotalDeAtencion;
-  //int reloj;
   int tamNombres;
   int agregarClienteCola;
   int eliminarClienteCola;
@@ -38,7 +37,6 @@ public:
   string ObtenerNombreAleatorio();
   void ActualizarCajas();
   void ActualizarCola();
-  void Imprimir() const;
   void ImprimirCajas() const;
   int ObtenerTiempoTotal() const;
 };

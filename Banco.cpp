@@ -16,9 +16,7 @@ Banco::Banco() {
   std::srand(std::time(nullptr));
   this->tamNombres = 0;
   this->tiempoTotalDeAtencion = 120 + rand() % 120;
-  this->agregarClienteCola = 2 + rand() % 10;
-  this->eliminarClienteCola = 2 + rand() % 10;
-  //this->reloj = 0;
+  this->agregarClienteCola = rand() % 5;
   this->cajas = new Caja[numDeCajas];
 }
 
@@ -70,34 +68,22 @@ void Banco::ActualizarCajas(){
 /******************************************************************************************/
 
 void Banco::ActualizarCola(){
-    //std::cout << agregarClienteCola << std::endl;
-    //std::cout << eliminarClienteCola << std::endl;
-    //std::cout << clientes.EstaVacia();
+
    try{
+
        if(agregarClienteCola == 0){
-       clientes.Encolar(ObtenerNombreAleatorio());
-       agregarClienteCola = 2 + rand() % 10;
+          clientes.Encolar(ObtenerNombreAleatorio());
+          agregarClienteCola = 2 + rand() % 5;
+
        }
-       if(eliminarClienteCola == 0){
-          if(!clientes.EstaVacia()){
-             ActualizarCajas();
-             clientes.Desencolar();
-          }
-          eliminarClienteCola = 2 + rand() % 10;
-       }
+       clientes.Imprimir();
        --agregarClienteCola;
-       --eliminarClienteCola;
+
    }catch(Cola<string>::ColaVacia &exc){
        std::cerr << "Error: " << exc.what() << std::endl;
    }
 }
 
-/******************************************************************************************/
-
-void Banco::Imprimir() const{
-   ImprimirCajas();
-   clientes.Imprimir();
-}
 
 /******************************************************************************************/
 
@@ -121,7 +107,7 @@ void Banco::Caja::Actualizar(Cola<string> &clientes){
    if(cliente.empty()){
       if(!clientes.EstaVacia()){
         cliente = clientes.ObtenerFrente();
-        tiempoDeAtencion = 1 + rand() % 10;
+        tiempoDeAtencion = 10 + rand() % 20;
         clientes.Desencolar();
       }
    }else{
