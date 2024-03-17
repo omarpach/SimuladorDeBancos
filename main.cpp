@@ -1,15 +1,29 @@
-#include "Cola.hpp"
-#include <chrono>
+#include "lib/Cola.hpp"
+#include "Banco.hpp"
+/* #include <chrono>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <thread>
+#include <thread> */
 
 using namespace std;
 
-string NuevoCliente(int i);
+int main() {
+  try {
+    Banco b;
+    b.LeerNombres("resources/Clientes.txt");
+    for (int i = 0; i < 3; ++i) {
+      cout << b.ObtenerNombreAleatorio() << endl;
+    }
+  }
+  catch (const char* e) {
+    cerr << "Error: " << e << endl;
+  }
+}
+
+/* string NuevoCliente(int i);
 
 int main() {
   int tiempoTotal;
@@ -84,4 +98,4 @@ string NuevoCliente(int i) {
     archivo.close();
   }
   throw "Ya no hay mas clientes...";
-}
+} */

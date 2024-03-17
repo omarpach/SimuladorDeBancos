@@ -8,8 +8,11 @@
 #include <string>
 #include <thread>
 
+using std::string;
+
 Banco::Banco() {
   std::srand(std::time(nullptr));
+  this->tamNombres = 0;
   this->tiempoTotalDeAtención = 120 + rand() % 120;
   this->reloj = 0;
   this->cajas = new Caja[numDeCajas];
@@ -25,7 +28,7 @@ Banco::Banco(const Banco &b) {}
 Banco &Banco::operator=(const Banco &b) {}
 
 void Banco::LeerNombres(const char *archivo) {
-  std::fstream fsArchivo(archivo);
+  std::ifstream fsArchivo(archivo);
   ListaSimple<string> listaNombres;
   if (!fsArchivo)
     throw "Archivo no encontrado";
@@ -34,4 +37,11 @@ void Banco::LeerNombres(const char *archivo) {
     std::getline(fsArchivo, nombre);
     listaNombres.AgregarAlFondo(nombre);
   }
+  this->nombres = listaNombres.Arreglo();
+  this->tamNombres = listaNombres.ObtenerTam();
+}
+
+string Banco::ObtenerNombreAleatorio(){
+  int i = rand() % tamNombres;
+  return nombres[i];
 }

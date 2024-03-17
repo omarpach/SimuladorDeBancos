@@ -11,6 +11,7 @@ private:
   int numDeCajas = 3;
   int tiempoTotalDeAtención;
   int reloj;
+  int tamNombres;
   string* nombres = nullptr;
   Cola<string> clientes;
   Cola<string> clientesAtendidos;
