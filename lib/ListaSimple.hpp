@@ -4,44 +4,174 @@
 #define NO_ENCONTRADO -1
 #include <iostream>
 
+/**
+ * @class ListaSimple
+ * @brief Implementa una lista enlazada simple de elementos de tipo genérico T.
+ * 
+ * Esta clase plantilla ofrece funcionalidades básicas de una lista enlazada, como agregar,
+ * eliminar y buscar elementos, además de obtener información sobre la lista.
+ * 
+ * @tparam T Tipo de dato de los elementos de la lista.
+ */
 template <typename T>
 class ListaSimple{
 private:
+  /**
+   * @struct Elemento
+   * @brief Define un nodo de la lista enlazada simple.
+   * 
+   * Cada nodo almacena un valor y un puntero al siguiente nodo en la lista.
+   * 
+   * @param valor El valor almacenado en el nodo.
+   * @param siguiente Un puntero al siguiente nodo en la lista.
+   */
   struct Elemento{
-    T valor;
-    Elemento* siguiente;
+    T valor; ///< Valor almacenado en el nodo.
+    Elemento* siguiente; ///< Puntero al siguiente nodo en la lista.
+
+    /**
+     * @brief Constructor de Elemento que inicializa un nodo con un valor y un puntero al siguiente nodo.
+     * @param valor Valor del nodo.
+     * @param siguiente Puntero al siguiente nodo en la lista, por defecto es NULL.
+     */
     Elemento(T valor, Elemento* siguiente = NULL);
   };
-  Elemento* frente;
-  Elemento* fondo;
-  int tam;
+
+  Elemento* frente; ///< Puntero al primer elemento de la lista.
+  Elemento* fondo; ///< Puntero al último elemento de la lista.
+  int tam; ///< Número de elementos en la lista.
 
 public:
-  /***** Prototipo Metodos fundamentales *****/
+  /**
+   * @brief Constructor por defecto que inicializa una lista vacía.
+   */
   ListaSimple();
+
+  /**
+   * @brief Destructor que libera la memoria de todos los elementos de la lista.
+   */
   ~ListaSimple();
+
+  /**
+   * @brief Constructor de copia.
+   * @param l Otra lista de la cual se copiarán los elementos.
+   */
   ListaSimple(const ListaSimple &l);
+
+  /**
+   * @brief Operador de asignación.
+   * @param l Otra lista que se asignará a esta instancia.
+   * @return Una referencia a esta instancia después de la asignación.
+   */
   ListaSimple& operator=(const ListaSimple &l);
 
-  /***** Prototipo Metodos de Agregar *****/
+  // Metodos de Agregar
+
+  /**
+   * @brief Agrega un elemento al frente de la lista.
+   * @param valor El valor a agregar.
+   */
   void AgregarAlFrente(T valor);
+
+  /**
+   * @brief Agrega un elemento al final de la lista.
+   * @param valor El valor a agregar.
+   */
   void AgregarAlFondo(T valor);
+
+  /**
+   * @brief Inserta un elemento en una posición específica de la lista.
+   * @param indice La posición en la que se insertará el elemento.
+   * @param valor El valor del elemento a insertar.
+   */
   void Agregar(int indice, T valor);
-  /***** Prototipo Metodos de Eliminar *****/
+
+  // Metodos de Eliminar
+
+  /**
+   * @brief Elimina el elemento del frente de la lista.
+   */
   void EliminarAlFrente();
+
+  /**
+   * @brief Elimina el elemento del fondo de la lista.
+   */
   void EliminarAlFondo();
+
+  /**
+   * @brief Elimina un elemento en una posición específica de la lista.
+   * @param indice La posición del elemento a eliminar.
+   */
   void Eliminar(int indice);
+
+  /**
+   * @brief Elimina todos los elementos de la lista, dejándola vacía.
+   */
   void Vaciar();
+
+  /**
+   * @brief Verifica si la lista está vacía.
+   * @return true si la lista no tiene elementos, false en caso contrario.
+   */
   bool EstaVacia() const;
-  /***** Prototipo Metodos de Utilidad *****/
+
+  // Metodos de Utilidad
+
+  /**
+   * @brief Busca un valor en la lista.
+   * @param valor El valor a buscar.
+   * @return true si el valor se encuentra en la lista, false en caso contrario.
+   */
   bool BuscarValor(T valor) const;
+
+  /**
+   * @brief Busca la posición de un valor en la lista.
+   * @param valor El valor cuya posición se quiere encontrar.
+   * @return La posición del valor en la lista o NO_ENCONTRADO si no se encuentra.
+   */
   int BuscarPosicion(T valor) const;
+
+  /**
+   * @brief Obtiene el valor del primer elemento de la lista.
+   * @return El valor del primer elemento de la lista.
+   */
   T ObtenerFrente() const;
+
+  /**
+   * @brief Obtiene el valor del último elemento de la lista.
+   * @return El valor del último elemento de la lista.
+   */
   T ObtenerFondo() const;
+
+  /**
+   * @brief Obtiene el valor de un elemento en una posición específica de la lista.
+   * @param indice La posición del elemento cuyo valor se quiere obtener.
+   * @return El valor del elemento en la posición especificada.
+   */
   T ObtenerElemento(int indice) const;
+
+  /**
+   * @brief Modifica el valor de un elemento en una posición específica de la lista.
+   * @param indice La posición del elemento a modificar.
+   * @param valor El nuevo valor para el elemento.
+   */
   void ModificarElemento(int indice, T valor);
+
+  /**
+   * @brief Obtiene el tamaño actual de la lista.
+   * @return El número de elementos en la lista.
+   */
   int ObtenerTam() const;
+
+  /**
+   * @brief Imprime todos los elementos de la lista.
+   */
   void Imprimir() const;
+
+  /**
+   * @brief Convierte la lista en un arreglo y lo devuelve.
+   * @return Un puntero al arreglo que contiene todos los elementos de la lista.
+   */
   T* Arreglo() const;
 };
 

@@ -1,8 +1,8 @@
 # TODO
-- [ ] Documentar los archivos
+- [x] Documentar los archivos
     - [x] Banco.hpp
-    - [ ] Cola.hpp
-    - [ ] ListaSimple.hpp
+    - [x] Cola.hpp
+    - [x] ListaSimple.hpp
 - [ ] Hacer la bitácora
 - [x] Imprimir tiempo total de atención, y esperar un enter antes de empezar la simulación
 - [x] Imprimir la cola de clientes vertical (como lo tiene la profe)
