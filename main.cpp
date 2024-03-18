@@ -29,6 +29,16 @@ int main() {
       this_thread::sleep_for(chrono::seconds(1));
       clrscr();
     }
+
+    cout << "Termino el tiempo de atencion de la caja" << endl;
+    cout << "\nLa caja terminara de atender a:" << endl;
+    banco.ImprimirClientesPorAtender();
+    cout << "\n\nAtendio en total a " << banco.ObtenerNumClientesAtendidos() << " personas, "
+      << "cuyos nombres, en orden de atencion, son: " << endl;
+    banco.ImprimirClientesAtendidos();
+    cout << "\n\nQuedaron " << banco.ObtenerNumClientesPorAtender()
+      << " personas por atender:" << endl;
+    banco.ImprimirClientesPorAtender();
   } catch (const char *e) {
     cerr << "Error: " << e << endl;
   } catch (...) {

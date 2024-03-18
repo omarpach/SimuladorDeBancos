@@ -16,11 +16,13 @@ private:
   string* nombres = nullptr;
   Cola<string> clientes;
   Cola<string> clientesAtendidos;
+  Cola<string> clientesPorAtender;
   struct Caja {
     string cliente;
     int tiempoDeAtencion;
     int tiempoTranscurrido = 0;
-    void Actualizar(Cola<string> &clientes);
+    void Actualizar(Cola<string> &clientes, Cola<string> &clientesAtendidos,
+                    Cola<string> &clientesPorAtender);
     void Imprimir() const;
   };
   Caja* cajas;
@@ -39,6 +41,11 @@ public:
   void ActualizarCola();
   void ImprimirCajas() const;
   int ObtenerTiempoTotal() const;
+  int ObtenerNumClientesAtendidos() const;
+  int ObtenerNumClientesPorAtender() const;
+  void ImprimirClientesAtendidos() const;
+  void ImprimirClientesNoAtendidos() const;
+  void ImprimirClientesPorAtender() const;
 };
 
 #endif // !BANCO_HPP_INCLUDED

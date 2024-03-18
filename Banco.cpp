@@ -1,4 +1,5 @@
 #include "Banco.hpp"
+#include "lib/Cola.hpp"
 #include "lib/ListaSimple.hpp"
 #include <chrono>
 #include <cstdlib>
@@ -62,15 +63,13 @@ string Banco::ObtenerNombreAleatorio() {
 
 void Banco::ActualizarCajas() {
   for (int i = 0; i < numDeCajas; ++i)
-    cajas[i].Actualizar(clientes);
+    cajas[i].Actualizar(clientes, clientesAtendidos, clientesPorAtender);
 }
 
 /******************************************************************************************/
 
 void Banco::ActualizarCola() {
-
   try {
-
     if (agregarClienteCola == 0) {
       clientes.Encolar(ObtenerNombreAleatorio());
       agregarClienteCola = 2 + rand() % 5;
@@ -99,18 +98,22 @@ int Banco::ObtenerTiempoTotal() const { return tiempoTotalDeAtencion; }
 
 /******************************************************************************************/
 
-void Banco::Caja::Actualizar(Cola<string> &clientes) {
+void Banco::Caja::Actualizar(Cola<string> &clientes, Cola<string> &clientesAtendidos,
+                             Cola<string> &clientesPorAtender) {
   // Caja no esta atendiendo a cliente
   if (cliente.empty()) {
     if (!clientes.EstaVacia()) {
       cliente = clientes.ObtenerFrente();
       tiempoDeAtencion = 10 + rand() % 20;
+      clientesPorAtender.Encolar(clientes.ObtenerFrente());
       clientes.Desencolar();
     }
   } else {
     // Caja ocupada con cliente
     ++tiempoTranscurrido;
     if (tiempoTranscurrido == tiempoDeAtencion) {
+      clientesPorAtender.Desencolar();
+      clientesAtendidos.Encolar(cliente);
       cliente.clear();
       tiempoTranscurrido = 0;
     }
@@ -130,3 +133,31 @@ void Banco::Caja::Imprimir() const {
 }
 
 /******************************************************************************************/
+
+int Banco::ObtenerNumClientesPorAtender() const {
+  return clientes.ObtenerTam();
+}
+
+/******************************************************************************************/
+
+int Banco::ObtenerNumClientesAtendidos() const {
+  return clientesAtendidos.ObtenerTam();
+}
+
+/******************************************************************************************/
+
+void Banco::ImprimirClientesNoAtendidos() const {
+  clientes.Imprimir();
+}
+
+/******************************************************************************************/
+
+void Banco::ImprimirClientesAtendidos() const {
+  clientesAtendidos.Imprimir();
+}
+
+/******************************************************************************************/
+
+void Banco::ImprimirClientesPorAtender() const {
+  clientesPorAtender.Imprimir();
+}
