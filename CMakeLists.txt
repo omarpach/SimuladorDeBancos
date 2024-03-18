@@ -8,4 +8,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../)
 set(SOURCES main.cpp Banco.cpp Banco.hpp)
 
 add_executable(SimuladorBanco ${SOURCES}) # All the .cpp files
-target_include_directories(SimuladorBanco PRIVATE lib/Cola.hpp lib/ListaSimple.hpp)
+target_include_directories(SimuladorBanco PRIVATE lib/Cola.hpp lib/ListaSimple.hpp lib/nocurses.h)

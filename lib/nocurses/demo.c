@@ -9,7 +9,7 @@
 
 
 #include <stdio.h>
-#include "nocurses.h"
+#include "../nocurses.h"
 
 int i;
 

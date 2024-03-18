@@ -5,10 +5,10 @@
 #include <iostream>
 
 /// @class Cola
-/// @brief Implementa una estructura de datos de cola circular utilizando plantillas.
+/// @brief Implementa una estructura de datos de cola circular utilizando
+/// plantillas.
 /// @tparam T Tipo de los elementos almacenados en la cola.
-template <typename T>
-class Cola {
+template <typename T> class Cola {
 public:
   /// @class ColaVacia
   /// @brief Excepción lanzada cuando se intenta operar sobre una cola vacía.
@@ -71,162 +71,130 @@ private:
   /// @struct Elemento
   /// @brief Representa un elemento dentro de la cola.
   struct Elemento {
-    T valor; ///< Valor del elemento.
+    T valor;             ///< Valor del elemento.
     Elemento *siguiente; ///< Puntero al siguiente elemento en la cola.
 
     /// @brief Constructor del elemento.
     /// @param valor Valor del elemento.
-    /// @param siguiente Puntero al siguiente elemento en la cola, nullptr por defecto.
+    /// @param siguiente Puntero al siguiente elemento en la cola, nullptr por
+    /// defecto.
     Elemento(T valor, Elemento *siguiente = nullptr);
   } * fondo; ///< Puntero al último elemento de la cola.
 };
 
 /******************************************************************************************/
 
-template<typename T>
-Cola<T>::Elemento::Elemento(T valor, Elemento* siguiente /* = NULL */){
+template <typename T>
+Cola<T>::Elemento::Elemento(T valor, Elemento *siguiente /* = NULL */) {
   this->valor = valor;
   this->siguiente = siguiente;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-Cola<T>::Cola()
-{
-    tam = 0;
-    fondo = nullptr;
+template <typename T> Cola<T>::Cola() {
+  tam = 0;
+  fondo = nullptr;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-Cola<T>::~Cola()
-{
-    Vaciar();
-}
+template <typename T> Cola<T>::~Cola() { Vaciar(); }
 
 /******************************************************************************************/
 
 template <typename T>
-Cola<T>::Cola(const Cola<T>& cola) : tam(0), fondo(nullptr)
-{
-    *this = cola;
+Cola<T>::Cola(const Cola<T> &cola) : tam(0), fondo(nullptr) {
+  *this = cola;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-Cola<T>& Cola<T>::operator=(const Cola<T>& cola)
-{
-    if(this == &cola) return *this;
-
-    Vaciar();
-    Elemento *actual = cola.fondo -> siguiente;
-    while(actual != nullptr){
-        Encolar(actual -> valor);
-        actual = actual -> siguiente;
-    }
+template <typename T> Cola<T> &Cola<T>::operator=(const Cola<T> &cola) {
+  if (this == &cola)
     return *this;
+
+  Vaciar();
+  Elemento *actual = cola.fondo->siguiente;
+  while (actual != nullptr) {
+    Encolar(actual->valor);
+    actual = actual->siguiente;
+  }
+  return *this;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-void Cola<T>::Encolar(T valor)
-{
-	Elemento * nuevo = new Elemento(valor, EstaVacia() ? nullptr : fondo -> siguiente);
-	(EstaVacia() ? nuevo -> siguiente : fondo -> siguiente) = nuevo;
-	fondo = nuevo;
-	++tam;
-
+template <typename T> void Cola<T>::Encolar(T valor) {
+  Elemento *nuevo =
+      new Elemento(valor, EstaVacia() ? nullptr : fondo->siguiente);
+  (EstaVacia() ? nuevo->siguiente : fondo->siguiente) = nuevo;
+  fondo = nuevo;
+  ++tam;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-void Cola<T>::Desencolar()
-{
-    if(EstaVacia()) throw ColaVacia();
-    Elemento *aux = fondo -> siguiente;
+template <typename T> void Cola<T>::Desencolar() {
+  if (EstaVacia())
+    throw ColaVacia();
+  Elemento *aux = fondo->siguiente;
 
-    if(tam > 1) fondo -> siguiente = aux -> siguiente;
-    else fondo = nullptr;
-    delete aux;
-    --tam;
-
+  if (tam > 1)
+    fondo->siguiente = aux->siguiente;
+  else
+    fondo = nullptr;
+  delete aux;
+  --tam;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-int Cola<T>::ObtenerTam() const
-{
-    return tam;
+template <typename T> int Cola<T>::ObtenerTam() const { return tam; }
+
+/******************************************************************************************/
+
+template <typename T> T Cola<T>::ObtenerFrente() const {
+  if (EstaVacia())
+    throw ColaVacia();
+  return fondo->siguiente->valor;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-T Cola<T>::ObtenerFrente() const
-{
-    if(EstaVacia()) throw ColaVacia();
-    return fondo -> siguiente -> valor;
+template <typename T> T Cola<T>::ObtenerFondo() const {
+  if (EstaVacia())
+    throw ColaVacia();
+  return fondo->valor;
 }
 
 /******************************************************************************************/
 
-template <typename T>
-T Cola<T>::ObtenerFondo() const
-{
-    if(EstaVacia()) throw ColaVacia();
-    return fondo -> valor;
+template <typename T> bool Cola<T>::EstaVacia() const { return tam == 0; }
+
+/******************************************************************************************/
+
+template <typename T> void Cola<T>::Vaciar() {
+  while (!EstaVacia())
+    Desencolar();
 }
 
 /******************************************************************************************/
 
-template <typename T>
-bool Cola<T>::EstaVacia() const
-{
-    return tam == 0;
-}
-
-/******************************************************************************************/
-
-template <typename T>
-void Cola<T>::Vaciar()
-{
-    while(!EstaVacia()) Desencolar();
-}
-
-/******************************************************************************************/
-
-template <typename T>
-void Cola<T>::Imprimir() const
-{
-    if(EstaVacia()) std::cout << char(179) << ' ' << char(179) << std::endl;
-    else{
-        Elemento *actual = fondo -> siguiente;
-
-        std::cout << char(179);
-        for(int i = 0; i < tam; ++i){
-            std::cout << actual -> valor << ", ";
-            actual = actual -> siguiente;
-        }
-        std::cout << "\b\b  ";
-        std::cout << char(179) << std::endl;
+template <typename T> void Cola<T>::Imprimir() const {
+  if (!EstaVacia()) {
+    Elemento *actual = fondo->siguiente;
+    for (int i = 0; i < tam; ++i) {
+      std::cout << actual->valor << std::endl;
+      actual = actual->siguiente;
     }
-
-
+  }
 }
 
 /******************************************************************************************/
 
-template <typename T>
-const char* Cola<T>::ColaVacia::what() const throw()
-{
-    return "Se intent\242 modificar una cola vacia...";
+template <typename T> const char *Cola<T>::ColaVacia::what() const throw() {
+  return "Se intent\242 modificar una cola vacia...";
 }
-
 
 #endif // COLA_HPP_INCLUDED

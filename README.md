@@ -1,8 +1,11 @@
 # TODO
 - [ ] Documentar los archivos
+    - [x] Banco.hpp
+    - [ ] Cola.hpp
+    - [ ] ListaSimple.hpp
 - [ ] Hacer la bitácora
-- [ ] Imprimir tiempo total de atención, y esperar un enter antes de empezar la simulación
-- [ ] Imprimir la cola de clientes vertical (como lo tiene la profe)
+- [x] Imprimir tiempo total de atención, y esperar un enter antes de empezar la simulación
+- [x] Imprimir la cola de clientes vertical (como lo tiene la profe)
 - [ ] Cuando termine: Imprimir los clientes que fueron atendidos por cada caja, en orden
     de atención
     - En clase banco, añadir cola Atendidos

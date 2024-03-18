@@ -53,84 +53,80 @@ void Banco::LeerNombres(const char *archivo) {
 
 /******************************************************************************************/
 
-string Banco::ObtenerNombreAleatorio(){
+string Banco::ObtenerNombreAleatorio() {
   int i = rand() % tamNombres;
   return nombres[i];
 }
 
 /******************************************************************************************/
 
-void Banco::ActualizarCajas(){
-  for(int i = 0; i < numDeCajas; ++i)
+void Banco::ActualizarCajas() {
+  for (int i = 0; i < numDeCajas; ++i)
     cajas[i].Actualizar(clientes);
 }
 
 /******************************************************************************************/
 
-void Banco::ActualizarCola(){
+void Banco::ActualizarCola() {
 
-   try{
+  try {
 
-       if(agregarClienteCola == 0){
-          clientes.Encolar(ObtenerNombreAleatorio());
-          agregarClienteCola = 2 + rand() % 5;
+    if (agregarClienteCola == 0) {
+      clientes.Encolar(ObtenerNombreAleatorio());
+      agregarClienteCola = 2 + rand() % 5;
+    }
+    std::cout << "Clientes:" << std::endl;
+    clientes.Imprimir();
+    --agregarClienteCola;
 
-       }
-       clientes.Imprimir();
-       --agregarClienteCola;
-
-   }catch(Cola<string>::ColaVacia &exc){
-       std::cerr << "Error: " << exc.what() << std::endl;
-   }
-}
-
-
-/******************************************************************************************/
-
-void Banco::ImprimirCajas() const{
-   for(int i = 0; i < numDeCajas; ++i){
-       cajas[i].Imprimir();
-       std::cout << "\n\n";
-   }
+  } catch (Cola<string>::ColaVacia &exc) {
+    std::cerr << "Error: " << exc.what() << std::endl;
+  }
 }
 
 /******************************************************************************************/
 
-int Banco::ObtenerTiempoTotal() const{
-   return tiempoTotalDeAtencion;
+void Banco::ImprimirCajas() const {
+  for (int i = 0; i < numDeCajas; ++i) {
+    cajas[i].Imprimir();
+    std::cout << "\n\n";
+  }
 }
 
 /******************************************************************************************/
 
-void Banco::Caja::Actualizar(Cola<string> &clientes){
-   // Caja no esta atendiendo a cliente
-   if(cliente.empty()){
-      if(!clientes.EstaVacia()){
-        cliente = clientes.ObtenerFrente();
-        tiempoDeAtencion = 10 + rand() % 20;
-        clientes.Desencolar();
-      }
-   }else{
-       // Caja ocupada con cliente
-       ++tiempoTranscurrido;
-       if(tiempoTranscurrido == tiempoDeAtencion){
-         cliente.clear();
-         tiempoTranscurrido = 0;
-       }
-   }
+int Banco::ObtenerTiempoTotal() const { return tiempoTotalDeAtencion; }
+
+/******************************************************************************************/
+
+void Banco::Caja::Actualizar(Cola<string> &clientes) {
+  // Caja no esta atendiendo a cliente
+  if (cliente.empty()) {
+    if (!clientes.EstaVacia()) {
+      cliente = clientes.ObtenerFrente();
+      tiempoDeAtencion = 10 + rand() % 20;
+      clientes.Desencolar();
+    }
+  } else {
+    // Caja ocupada con cliente
+    ++tiempoTranscurrido;
+    if (tiempoTranscurrido == tiempoDeAtencion) {
+      cliente.clear();
+      tiempoTranscurrido = 0;
+    }
+  }
 }
 
 /******************************************************************************************/
 
-void Banco::Caja::Imprimir() const{
-   std::cout << "Caja: " << std::endl;
-   if(cliente.empty()) std::cout << "La caja esta desocupada..." << std::endl;
-   else{
-      std::cout << "La caja esta atendiendo a " << cliente << std::endl;
-      std::cout << "Tiempo de atencion: " << tiempoTranscurrido << std::endl;
-   }
+void Banco::Caja::Imprimir() const {
+  std::cout << "Caja: " << std::endl;
+  if (cliente.empty())
+    std::cout << "La caja esta desocupada..." << std::endl;
+  else {
+    std::cout << "La caja esta atendiendo a " << cliente << std::endl;
+    std::cout << "Tiempo de atencion: " << tiempoTranscurrido << std::endl;
+  }
 }
 
 /******************************************************************************************/
-
-

@@ -58,7 +58,7 @@ static void wait(){
 
 
 static void clrscr(){
-    printf(ESC"[2J"ESC"[?6h");
+    printf(ESC"[2J" ESC "[?6h");
 }
 
 
@@ -189,10 +189,10 @@ static int getche(){
 }
 
 static void clrline(){
-    printf(ESC"[2K"ESC"E");
+    printf(ESC"[2K" ESC "E");
 }
 
 static void resetcolors(){
-    printf(ESC"001b"ESC"[0m");
+    printf(ESC"001b" ESC "[0m");
 }
 
