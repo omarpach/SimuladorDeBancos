@@ -4,45 +4,81 @@
 #include <exception>
 #include <iostream>
 
-template <typename T> class Cola {
+/// @class Cola
+/// @brief Implementa una estructura de datos de cola circular utilizando plantillas.
+/// @tparam T Tipo de los elementos almacenados en la cola.
+template <typename T>
+class Cola {
 public:
+  /// @class ColaVacia
+  /// @brief Excepción lanzada cuando se intenta operar sobre una cola vacía.
   class ColaVacia : public std::exception {
   public:
+    /// @brief Proporciona el mensaje de error asociado a la excepción.
+    /// @return Mensaje de error.
     virtual const char *what() const throw();
   };
 
+  /// @brief Constructor por defecto.
   Cola();
 
+  /// @brief Destructor.
   ~Cola();
 
+  /// @brief Constructor de copia.
+  /// @param cola Referencia a la cola a copiar.
   Cola(const Cola<T> &cola);
 
+  /// @brief Operador de asignación.
+  /// @param cola Referencia a la cola a asignar.
+  /// @return Referencia a esta cola.
   Cola<T> &operator=(const Cola<T> &cola);
 
+  /// @brief Encola un elemento al final de la cola.
+  /// @param valor Elemento a encolar.
   void Encolar(T valor);
 
+  /// @brief Desencola el elemento al frente de la cola.
   void Desencolar();
 
+  /// @brief Obtiene el tamaño actual de la cola.
+  /// @return Número de elementos en la cola.
   int ObtenerTam() const;
 
+  /// @brief Obtiene el valor del elemento al frente de la cola.
+  /// @return Valor del elemento al frente.
+  /// @throw ColaVacia si la cola está vacía.
   T ObtenerFrente() const;
 
+  /// @brief Obtiene el valor del elemento al fondo de la cola.
+  /// @return Valor del último elemento.
+  /// @throw ColaVacia si la cola está vacía.
   T ObtenerFondo() const;
 
+  /// @brief Verifica si la cola está vacía.
+  /// @return true si la cola está vacía, false en caso contrario.
   bool EstaVacia() const;
 
+  /// @brief Vacía la cola, eliminando todos sus elementos.
   void Vaciar();
 
+  /// @brief Imprime los elementos de la cola en consola.
   void Imprimir() const;
 
 private:
-  int tam;
+  int tam; ///< Tamaño actual de la cola.
 
+  /// @struct Elemento
+  /// @brief Representa un elemento dentro de la cola.
   struct Elemento {
-    T valor;
-    Elemento *siguiente;
+    T valor; ///< Valor del elemento.
+    Elemento *siguiente; ///< Puntero al siguiente elemento en la cola.
+
+    /// @brief Constructor del elemento.
+    /// @param valor Valor del elemento.
+    /// @param siguiente Puntero al siguiente elemento en la cola, nullptr por defecto.
     Elemento(T valor, Elemento *siguiente = nullptr);
-  } * fondo;
+  } * fondo; ///< Puntero al último elemento de la cola.
 };
 
 /******************************************************************************************/

@@ -1,7 +1,7 @@
 #ifndef BANCO_HPP_INCLUDED
 #define BANCO_HPP_INCLUDED
 
-#include "Cola.hpp"
+#include "lib/Cola.hpp"
 #include <string>
 
 using std::string;
