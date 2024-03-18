@@ -1,0 +1,481 @@
+\doxysection{Lista\+Simple\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_lista_simple}{}\label{class_lista_simple}\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+
+
+Implementa una lista enlazada simple de elementos de tipo genérico T.  
+
+
+
+
+{\ttfamily \#include $<$Lista\+Simple.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{Lista\+Simple}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto que inicializa una lista vacía. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_lista_simple_a46e428ca1c3221912a53629f4b441774}{\texorpdfstring{$\sim$}{\string~}\+Lista\+Simple}} ()
+\begin{DoxyCompactList}\small\item\em Destructor que libera la memoria de todos los elementos de la lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_lista_simple_a51f50e08e5fd9e264aa40bed2f5e2ccb}{Lista\+Simple}} (const \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}} \&l)
+\begin{DoxyCompactList}\small\item\em Constructor de copia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}} \& \mbox{\hyperlink{class_lista_simple_a1b67fa72eebaf818859164fa886fa695}{operator=}} (const \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}} \&l)
+\begin{DoxyCompactList}\small\item\em Operador de asignación. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}{Agregar\+Al\+Frente}} (T valor)
+\begin{DoxyCompactList}\small\item\em Agrega un elemento al frente de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{Agregar\+Al\+Fondo}} (T valor)
+\begin{DoxyCompactList}\small\item\em Agrega un elemento al final de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b}{Agregar}} (int indice, T valor)
+\begin{DoxyCompactList}\small\item\em Inserta un elemento en una posición específica de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{Eliminar\+Al\+Frente}} ()
+\begin{DoxyCompactList}\small\item\em Elimina el elemento del frente de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}{Eliminar\+Al\+Fondo}} ()
+\begin{DoxyCompactList}\small\item\em Elimina el elemento del fondo de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_a933004cb56c049e59488fb61fe656520}{Eliminar}} (int indice)
+\begin{DoxyCompactList}\small\item\em Elimina un elemento en una posición específica de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{Vaciar}} ()
+\begin{DoxyCompactList}\small\item\em Elimina todos los elementos de la lista, dejándola vacía. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{Esta\+Vacia}} () const
+\begin{DoxyCompactList}\small\item\em Verifica si la lista está vacía. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc}{Buscar\+Valor}} (T valor) const
+\begin{DoxyCompactList}\small\item\em Busca un valor en la lista. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6}{Buscar\+Posicion}} (T valor) const
+\begin{DoxyCompactList}\small\item\em Busca la posición de un valor en la lista. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}{Obtener\+Frente}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el valor del primer elemento de la lista. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}{Obtener\+Fondo}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el valor del último elemento de la lista. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e}{Obtener\+Elemento}} (int indice) const
+\begin{DoxyCompactList}\small\item\em Obtiene el valor de un elemento en una posición específica de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_a36ab261243b5376e9cd81592dce2701e}{Modificar\+Elemento}} (int indice, T valor)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de un elemento en una posición específica de la lista. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{Obtener\+Tam}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el tamaño actual de la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lista_simple_ac880ee155457533548c51271e159f1b7}{Imprimir}} () const
+\begin{DoxyCompactList}\small\item\em Imprime todos los elementos de la lista. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_lista_simple_a15c48423c8c05aaab67e884c2c580307}{Arreglo}} () const
+\begin{DoxyCompactList}\small\item\em Convierte la lista en un arreglo y lo devuelve. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Lista\+Simple$<$ T $>$}
+Implementa una lista enlazada simple de elementos de tipo genérico T. 
+
+Esta clase plantilla ofrece funcionalidades básicas de una lista enlazada, como agregar, eliminar y buscar elementos, además de obtener información sobre la lista.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de dato de los elementos de la lista. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}\label{class_lista_simple_a6692657a68960263f4f1d27df1385bbc} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ListaSimple@{ListaSimple}}
+\index{ListaSimple@{ListaSimple}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ListaSimple()}{ListaSimple()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\mbox{\hyperlink{class_lista_simple}{\+::\+Lista\+Simple}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto que inicializa una lista vacía. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00186}{186}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a46e428ca1c3221912a53629f4b441774}\label{class_lista_simple_a46e428ca1c3221912a53629f4b441774} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!````~ListaSimple@{\texorpdfstring{$\sim$}{\string~}ListaSimple}}
+\index{````~ListaSimple@{\texorpdfstring{$\sim$}{\string~}ListaSimple}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ListaSimple()}{\string~ListaSimple()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor que libera la memoria de todos los elementos de la lista. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00192}{192}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a51f50e08e5fd9e264aa40bed2f5e2ccb}\label{class_lista_simple_a51f50e08e5fd9e264aa40bed2f5e2ccb} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ListaSimple@{ListaSimple}}
+\index{ListaSimple@{ListaSimple}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ListaSimple()}{ListaSimple()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\mbox{\hyperlink{class_lista_simple}{\+::\+Lista\+Simple}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Otra lista de la cual se copiarán los elementos. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00197}{197}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b}\label{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!Agregar@{Agregar}}
+\index{Agregar@{Agregar}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Agregar()}{Agregar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Agregar (\begin{DoxyParamCaption}\item[{int}]{indice,  }\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Inserta un elemento en una posición específica de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & La posición en la que se insertará el elemento. \\
+\hline
+{\em valor} & El valor del elemento a insertar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00233}{233}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}\label{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!AgregarAlFondo@{AgregarAlFondo}}
+\index{AgregarAlFondo@{AgregarAlFondo}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AgregarAlFondo()}{AgregarAlFondo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Agregar\+Al\+Fondo (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Agrega un elemento al final de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El valor a agregar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00225}{225}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}\label{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!AgregarAlFrente@{AgregarAlFrente}}
+\index{AgregarAlFrente@{AgregarAlFrente}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AgregarAlFrente()}{AgregarAlFrente()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Agregar\+Al\+Frente (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Agrega un elemento al frente de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El valor a agregar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00217}{217}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a15c48423c8c05aaab67e884c2c580307}\label{class_lista_simple_a15c48423c8c05aaab67e884c2c580307} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!Arreglo@{Arreglo}}
+\index{Arreglo@{Arreglo}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Arreglo()}{Arreglo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Arreglo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convierte la lista en un arreglo y lo devuelve. 
+
+\begin{DoxyReturn}{Returns}
+Un puntero al arreglo que contiene todos los elementos de la lista. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00371}{371}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6}\label{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!BuscarPosicion@{BuscarPosicion}}
+\index{BuscarPosicion@{BuscarPosicion}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BuscarPosicion()}{BuscarPosicion()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Buscar\+Posicion (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption}) const}
+
+
+
+Busca la posición de un valor en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El valor cuya posición se quiere encontrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La posición del valor en la lista o NO\+\_\+\+ENCONTRADO si no se encuentra. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00306}{306}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc}\label{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!BuscarValor@{BuscarValor}}
+\index{BuscarValor@{BuscarValor}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BuscarValor()}{BuscarValor()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Buscar\+Valor (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption}) const}
+
+
+
+Busca un valor en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & El valor a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el valor se encuentra en la lista, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00299}{299}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a933004cb56c049e59488fb61fe656520}\label{class_lista_simple_a933004cb56c049e59488fb61fe656520} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!Eliminar@{Eliminar}}
+\index{Eliminar@{Eliminar}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Eliminar()}{Eliminar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Eliminar (\begin{DoxyParamCaption}\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Elimina un elemento en una posición específica de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & La posición del elemento a eliminar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00272}{272}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}\label{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!EliminarAlFondo@{EliminarAlFondo}}
+\index{EliminarAlFondo@{EliminarAlFondo}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EliminarAlFondo()}{EliminarAlFondo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Eliminar\+Al\+Fondo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina el elemento del fondo de la lista. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00259}{259}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_afdc3967373903076c824e70d1222fad8}\label{class_lista_simple_afdc3967373903076c824e70d1222fad8} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!EliminarAlFrente@{EliminarAlFrente}}
+\index{EliminarAlFrente@{EliminarAlFrente}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EliminarAlFrente()}{EliminarAlFrente()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Eliminar\+Al\+Frente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina el elemento del frente de la lista. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00249}{249}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}\label{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!EstaVacia@{EstaVacia}}
+\index{EstaVacia@{EstaVacia}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EstaVacia()}{EstaVacia()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Esta\+Vacia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica si la lista está vacía. 
+
+\begin{DoxyReturn}{Returns}
+true si la lista no tiene elementos, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00293}{293}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_ac880ee155457533548c51271e159f1b7}\label{class_lista_simple_ac880ee155457533548c51271e159f1b7} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!Imprimir@{Imprimir}}
+\index{Imprimir@{Imprimir}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Imprimir()}{Imprimir()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Imprimir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime todos los elementos de la lista. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00356}{356}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a36ab261243b5376e9cd81592dce2701e}\label{class_lista_simple_a36ab261243b5376e9cd81592dce2701e} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ModificarElemento@{ModificarElemento}}
+\index{ModificarElemento@{ModificarElemento}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ModificarElemento()}{ModificarElemento()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Modificar\+Elemento (\begin{DoxyParamCaption}\item[{int}]{indice,  }\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Modifica el valor de un elemento en una posición específica de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & La posición del elemento a modificar. \\
+\hline
+{\em valor} & El nuevo valor para el elemento. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00338}{338}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e}\label{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ObtenerElemento@{ObtenerElemento}}
+\index{ObtenerElemento@{ObtenerElemento}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerElemento()}{ObtenerElemento()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Obtener\+Elemento (\begin{DoxyParamCaption}\item[{int}]{indice }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el valor de un elemento en una posición específica de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & La posición del elemento cuyo valor se quiere obtener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El valor del elemento en la posición especificada. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00325}{325}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}\label{class_lista_simple_abeabaa980fdca8341049f936a6905b3c} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ObtenerFondo@{ObtenerFondo}}
+\index{ObtenerFondo@{ObtenerFondo}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerFondo()}{ObtenerFondo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Obtener\+Fondo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el valor del último elemento de la lista. 
+
+\begin{DoxyReturn}{Returns}
+El valor del último elemento de la lista. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00320}{320}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}\label{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ObtenerFrente@{ObtenerFrente}}
+\index{ObtenerFrente@{ObtenerFrente}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerFrente()}{ObtenerFrente()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Obtener\+Frente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el valor del primer elemento de la lista. 
+
+\begin{DoxyReturn}{Returns}
+El valor del primer elemento de la lista. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00315}{315}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}\label{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!ObtenerTam@{ObtenerTam}}
+\index{ObtenerTam@{ObtenerTam}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerTam()}{ObtenerTam()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Obtener\+Tam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el tamaño actual de la lista. 
+
+\begin{DoxyReturn}{Returns}
+El número de elementos en la lista. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00351}{351}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_a1b67fa72eebaf818859164fa886fa695}\label{class_lista_simple_a1b67fa72eebaf818859164fa886fa695} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$ \& \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})}
+
+
+
+Operador de asignación. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & Otra lista que se asignará a esta instancia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una referencia a esta instancia después de la asignación. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00204}{204}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+\Hypertarget{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}\label{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27} 
+\index{ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}!Vaciar@{Vaciar}}
+\index{Vaciar@{Vaciar}!ListaSimple$<$ T $>$@{ListaSimple$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vaciar()}{Vaciar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_lista_simple}{Lista\+Simple}}$<$ T $>$\+::\+Vaciar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina todos los elementos de la lista, dejándola vacía. 
+
+
+
+Definition at line \mbox{\hyperlink{_lista_simple_8hpp_source_l00288}{288}} of file \mbox{\hyperlink{_lista_simple_8hpp_source}{Lista\+Simple.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/omarpacheco/uni/4sem/\+Estructuras\+De\+Datos/\+Colas/\+Simulador\+Cola\+De\+Banco/lib/\mbox{\hyperlink{_lista_simple_8hpp}{Lista\+Simple.\+hpp}}\end{DoxyCompactItemize}

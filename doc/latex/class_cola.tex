@@ -1,0 +1,290 @@
+\doxysection{Cola\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_cola}{}\label{class_cola}\index{Cola$<$ T $>$@{Cola$<$ T $>$}}
+
+
+Implementa una estructura de datos de cola circular utilizando plantillas.  
+
+
+
+
+{\ttfamily \#include $<$Cola.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_cola_1_1_cola_vacia}{Cola\+Vacia}}
+\begin{DoxyCompactList}\small\item\em Excepción lanzada cuando se intenta operar sobre una cola vacía. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cola_aea3a971c7c522618f4dc972e8b4ff153}{Cola}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cola_af4d55930921c93c626006ba2e842530b}{\texorpdfstring{$\sim$}{\string~}\+Cola}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cola_a55c6fece3c09ec0de98c5bd64c73b956}{Cola}} (const \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \&cola)
+\begin{DoxyCompactList}\small\item\em Constructor de copia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \& \mbox{\hyperlink{class_cola_adc0a018ddceaeb7b5bc50f02354a6050}{operator=}} (const \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \&cola)
+\begin{DoxyCompactList}\small\item\em Operador de asignación. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cola_a35d4996b306a1abbf5981911c86bf4f5}{Encolar}} (T valor)
+\begin{DoxyCompactList}\small\item\em Encola un elemento al final de la cola. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cola_aaf2bd7e44a1ce8672a53bdb4f7fae064}{Desencolar}} ()
+\begin{DoxyCompactList}\small\item\em Desencola el elemento al frente de la cola. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cola_a3e21e2bc374e616b6c6e113acca6279c}{Obtener\+Tam}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el tamaño actual de la cola. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_cola_a046eaed748210ebe29ad892052bc063f}{Obtener\+Frente}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el valor del elemento al frente de la cola. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_cola_ab31e7f8a78e629802fa0dbc48affca90}{Obtener\+Fondo}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el valor del elemento al fondo de la cola. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cola_a11e4dc2ed1e90900fb0a288ec1a055a2}{Esta\+Vacia}} () const
+\begin{DoxyCompactList}\small\item\em Verifica si la cola está vacía. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cola_ad8a0e69757f68aa3d46f183428de4f9d}{Vaciar}} ()
+\begin{DoxyCompactList}\small\item\em Vacía la cola, eliminando todos sus elementos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cola_a445bedacf8334f5414c98e89815776b6}{Imprimir}} () const
+\begin{DoxyCompactList}\small\item\em Imprime los elementos de la cola en consola. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Cola$<$ T $>$}
+Implementa una estructura de datos de cola circular utilizando plantillas. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo de los elementos almacenados en la cola. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cola_aea3a971c7c522618f4dc972e8b4ff153}\label{class_cola_aea3a971c7c522618f4dc972e8b4ff153} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Cola@{Cola}}
+\index{Cola@{Cola}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Cola()}{Cola()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\mbox{\hyperlink{class_cola}{\+::\+Cola}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_af4d55930921c93c626006ba2e842530b}\label{class_cola_af4d55930921c93c626006ba2e842530b} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!````~Cola@{\texorpdfstring{$\sim$}{\string~}Cola}}
+\index{````~Cola@{\texorpdfstring{$\sim$}{\string~}Cola}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Cola()}{\string~Cola()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_cola}{Cola}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a55c6fece3c09ec0de98c5bd64c73b956}\label{class_cola_a55c6fece3c09ec0de98c5bd64c73b956} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Cola@{Cola}}
+\index{Cola@{Cola}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Cola()}{Cola()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\mbox{\hyperlink{class_cola}{\+::\+Cola}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \&}]{cola }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cola} & Referencia a la cola a copiar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cola_aaf2bd7e44a1ce8672a53bdb4f7fae064}\label{class_cola_aaf2bd7e44a1ce8672a53bdb4f7fae064} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Desencolar@{Desencolar}}
+\index{Desencolar@{Desencolar}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Desencolar()}{Desencolar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Desencolar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desencola el elemento al frente de la cola. 
+
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00138}{138}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a35d4996b306a1abbf5981911c86bf4f5}\label{class_cola_a35d4996b306a1abbf5981911c86bf4f5} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Encolar@{Encolar}}
+\index{Encolar@{Encolar}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Encolar()}{Encolar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Encolar (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Encola un elemento al final de la cola. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Elemento a encolar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00128}{128}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a11e4dc2ed1e90900fb0a288ec1a055a2}\label{class_cola_a11e4dc2ed1e90900fb0a288ec1a055a2} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!EstaVacia@{EstaVacia}}
+\index{EstaVacia@{EstaVacia}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{EstaVacia()}{EstaVacia()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Esta\+Vacia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica si la cola está vacía. 
+
+\begin{DoxyReturn}{Returns}
+true si la cola está vacía, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00173}{173}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a445bedacf8334f5414c98e89815776b6}\label{class_cola_a445bedacf8334f5414c98e89815776b6} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Imprimir@{Imprimir}}
+\index{Imprimir@{Imprimir}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Imprimir()}{Imprimir()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Imprimir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime los elementos de la cola en consola. 
+
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00184}{184}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_ab31e7f8a78e629802fa0dbc48affca90}\label{class_cola_ab31e7f8a78e629802fa0dbc48affca90} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!ObtenerFondo@{ObtenerFondo}}
+\index{ObtenerFondo@{ObtenerFondo}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerFondo()}{ObtenerFondo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Obtener\+Fondo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el valor del elemento al fondo de la cola. 
+
+\begin{DoxyReturn}{Returns}
+Valor del último elemento. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_cola_1_1_cola_vacia}{Cola\+Vacia}} & si la cola está vacía. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00165}{165}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a046eaed748210ebe29ad892052bc063f}\label{class_cola_a046eaed748210ebe29ad892052bc063f} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!ObtenerFrente@{ObtenerFrente}}
+\index{ObtenerFrente@{ObtenerFrente}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerFrente()}{ObtenerFrente()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Obtener\+Frente (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el valor del elemento al frente de la cola. 
+
+\begin{DoxyReturn}{Returns}
+Valor del elemento al frente. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_cola_1_1_cola_vacia}{Cola\+Vacia}} & si la cola está vacía. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00157}{157}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_a3e21e2bc374e616b6c6e113acca6279c}\label{class_cola_a3e21e2bc374e616b6c6e113acca6279c} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!ObtenerTam@{ObtenerTam}}
+\index{ObtenerTam@{ObtenerTam}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ObtenerTam()}{ObtenerTam()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Obtener\+Tam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtiene el tamaño actual de la cola. 
+
+\begin{DoxyReturn}{Returns}
+Número de elementos en la cola. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00153}{153}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_adc0a018ddceaeb7b5bc50f02354a6050}\label{class_cola_adc0a018ddceaeb7b5bc50f02354a6050} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \& \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$ \&}]{cola }\end{DoxyParamCaption})}
+
+
+
+Operador de asignación. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cola} & Referencia a la cola a asignar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referencia a esta cola. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00113}{113}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+\Hypertarget{class_cola_ad8a0e69757f68aa3d46f183428de4f9d}\label{class_cola_ad8a0e69757f68aa3d46f183428de4f9d} 
+\index{Cola$<$ T $>$@{Cola$<$ T $>$}!Vaciar@{Vaciar}}
+\index{Vaciar@{Vaciar}!Cola$<$ T $>$@{Cola$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vaciar()}{Vaciar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_cola}{Cola}}$<$ T $>$\+::\+Vaciar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vacía la cola, eliminando todos sus elementos. 
+
+
+
+Definition at line \mbox{\hyperlink{_cola_8hpp_source_l00177}{177}} of file \mbox{\hyperlink{_cola_8hpp_source}{Cola.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/omarpacheco/uni/4sem/\+Estructuras\+De\+Datos/\+Colas/\+Simulador\+Cola\+De\+Banco/lib/\mbox{\hyperlink{_cola_8hpp}{Cola.\+hpp}}\end{DoxyCompactItemize}

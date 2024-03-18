@@ -1,0 +1,239 @@
+\doxysection{Banco Class Reference}
+\hypertarget{class_banco}{}\label{class_banco}\index{Banco@{Banco}}
+
+
+Simula el funcionamiento de un banco con clientes y cajas de atención.  
+
+
+
+
+{\ttfamily \#include $<$Banco.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_banco_a686e51b219dc175e432e91559298b259}{Banco}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. Inicializa el banco con un número predeterminado de cajas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_banco_af69f9b0da3521d7c1e422f21dfd5829e}{\texorpdfstring{$\sim$}{\string~}\+Banco}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Limpia todos los recursos dinámicos utilizados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_banco_a68c57db423601cdd1df9a348b0596992}{Banco}} (const \mbox{\hyperlink{class_banco}{Banco}} \&b)
+\begin{DoxyCompactList}\small\item\em Constructor de copia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_banco}{Banco}} \& \mbox{\hyperlink{class_banco_a4c8af80465112589c7b3322cd8836cac}{operator=}} (const \mbox{\hyperlink{class_banco}{Banco}} \&b)
+\begin{DoxyCompactList}\small\item\em Operador de asignación. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_a678071133a40e26ce4cb8c0b2c09d370}{Leer\+Nombres}} (const char \texorpdfstring{$\ast$}{*}archivo)
+\begin{DoxyCompactList}\small\item\em Lee los nombres de los clientes desde un archivo y los almacena en el arreglo de nombres. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_banco_a27e9199b4c4b665c1f9aa013acd2b4b8}{Obtener\+Nombre}} (int indice)
+\begin{DoxyCompactList}\small\item\em Obtiene un nombre del arreglo de nombres basado en un índice. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_banco_a5b5dbbf8e230d9744aeaa1c998642d04}{Obtener\+Nombre\+Aleatorio}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene un nombre aleatorio del arreglo de nombres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_a8e234cfb6ca779d5265efd60ce34fd37}{Actualizar\+Cajas}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de todas las cajas, procesando o asignando clientes según sea necesario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_ad5583e0f964ec0b469842735e8d62f3b}{Actualizar\+Cola}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza la cola de clientes, añadiendo nuevos clientes según el tiempo de simulación. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_ad13995120797f23630385504b986a668}{Imprimir\+Cajas}} () const
+\begin{DoxyCompactList}\small\item\em Imprime el estado de todas las cajas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_banco_aab1ba4b4e41086d5cc74b5db6bd63d36}{Obtener\+Tiempo\+Total}} () const
+\item 
+int \mbox{\hyperlink{class_banco_ac36178f58a1233d53f9683d9247a5a0f}{Obtener\+Num\+Clientes\+Atendidos}} () const
+\item 
+int \mbox{\hyperlink{class_banco_a4861c966e2e225877c7068a84a43548a}{Obtener\+Num\+Clientes\+Por\+Atender}} () const
+\item 
+void \mbox{\hyperlink{class_banco_adb53ac7d5531d4e865f43016bf9604ba}{Imprimir\+Clientes\+Atendidos}} () const
+\begin{DoxyCompactList}\small\item\em Imprime la lista de clientes que han sido atendidos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_a66bc0c665055d641f41ee4ab1eb4b95f}{Imprimir\+Clientes\+No\+Atendidos}} () const
+\begin{DoxyCompactList}\small\item\em Imprime la lista de clientes que no pudieron ser atendidos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banco_a414176f8869aaded79a4efcbeddd61f0}{Imprimir\+Clientes\+Por\+Atender}} () const
+\begin{DoxyCompactList}\small\item\em Imprime la lista de clientes que están en proceso de ser atendidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simula el funcionamiento de un banco con clientes y cajas de atención. 
+
+Esta clase representa un banco donde los clientes son generados en tiempos aleatorios, añadidos a una cola y atendidos por cajas disponibles. La simulación incluye la gestión de colas para clientes en espera, clientes siendo atendidos y clientes ya atendidos. 
+
+Definition at line \mbox{\hyperlink{_banco_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{_banco_8hpp_source}{Banco.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_banco_a686e51b219dc175e432e91559298b259}\label{class_banco_a686e51b219dc175e432e91559298b259} 
+\index{Banco@{Banco}!Banco@{Banco}}
+\index{Banco@{Banco}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{Banco()}{Banco()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Banco\+::\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. Inicializa el banco con un número predeterminado de cajas. 
+
+\Hypertarget{class_banco_af69f9b0da3521d7c1e422f21dfd5829e}\label{class_banco_af69f9b0da3521d7c1e422f21dfd5829e} 
+\index{Banco@{Banco}!````~Banco@{\texorpdfstring{$\sim$}{\string~}Banco}}
+\index{````~Banco@{\texorpdfstring{$\sim$}{\string~}Banco}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Banco()}{\string~Banco()}}
+{\footnotesize\ttfamily Banco\+::\texorpdfstring{$\sim$}{\string~}\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. Limpia todos los recursos dinámicos utilizados. 
+
+\Hypertarget{class_banco_a68c57db423601cdd1df9a348b0596992}\label{class_banco_a68c57db423601cdd1df9a348b0596992} 
+\index{Banco@{Banco}!Banco@{Banco}}
+\index{Banco@{Banco}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{Banco()}{Banco()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Banco\+::\+Banco (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_banco}{Banco}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_banco_a8e234cfb6ca779d5265efd60ce34fd37}\label{class_banco_a8e234cfb6ca779d5265efd60ce34fd37} 
+\index{Banco@{Banco}!ActualizarCajas@{ActualizarCajas}}
+\index{ActualizarCajas@{ActualizarCajas}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ActualizarCajas()}{ActualizarCajas()}}
+{\footnotesize\ttfamily void Banco\+::\+Actualizar\+Cajas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualiza el estado de todas las cajas, procesando o asignando clientes según sea necesario. 
+
+\Hypertarget{class_banco_ad5583e0f964ec0b469842735e8d62f3b}\label{class_banco_ad5583e0f964ec0b469842735e8d62f3b} 
+\index{Banco@{Banco}!ActualizarCola@{ActualizarCola}}
+\index{ActualizarCola@{ActualizarCola}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ActualizarCola()}{ActualizarCola()}}
+{\footnotesize\ttfamily void Banco\+::\+Actualizar\+Cola (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualiza la cola de clientes, añadiendo nuevos clientes según el tiempo de simulación. 
+
+\Hypertarget{class_banco_ad13995120797f23630385504b986a668}\label{class_banco_ad13995120797f23630385504b986a668} 
+\index{Banco@{Banco}!ImprimirCajas@{ImprimirCajas}}
+\index{ImprimirCajas@{ImprimirCajas}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ImprimirCajas()}{ImprimirCajas()}}
+{\footnotesize\ttfamily void Banco\+::\+Imprimir\+Cajas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime el estado de todas las cajas. 
+
+\Hypertarget{class_banco_adb53ac7d5531d4e865f43016bf9604ba}\label{class_banco_adb53ac7d5531d4e865f43016bf9604ba} 
+\index{Banco@{Banco}!ImprimirClientesAtendidos@{ImprimirClientesAtendidos}}
+\index{ImprimirClientesAtendidos@{ImprimirClientesAtendidos}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ImprimirClientesAtendidos()}{ImprimirClientesAtendidos()}}
+{\footnotesize\ttfamily void Banco\+::\+Imprimir\+Clientes\+Atendidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la lista de clientes que han sido atendidos. 
+
+\Hypertarget{class_banco_a66bc0c665055d641f41ee4ab1eb4b95f}\label{class_banco_a66bc0c665055d641f41ee4ab1eb4b95f} 
+\index{Banco@{Banco}!ImprimirClientesNoAtendidos@{ImprimirClientesNoAtendidos}}
+\index{ImprimirClientesNoAtendidos@{ImprimirClientesNoAtendidos}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ImprimirClientesNoAtendidos()}{ImprimirClientesNoAtendidos()}}
+{\footnotesize\ttfamily void Banco\+::\+Imprimir\+Clientes\+No\+Atendidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la lista de clientes que no pudieron ser atendidos. 
+
+\Hypertarget{class_banco_a414176f8869aaded79a4efcbeddd61f0}\label{class_banco_a414176f8869aaded79a4efcbeddd61f0} 
+\index{Banco@{Banco}!ImprimirClientesPorAtender@{ImprimirClientesPorAtender}}
+\index{ImprimirClientesPorAtender@{ImprimirClientesPorAtender}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ImprimirClientesPorAtender()}{ImprimirClientesPorAtender()}}
+{\footnotesize\ttfamily void Banco\+::\+Imprimir\+Clientes\+Por\+Atender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la lista de clientes que están en proceso de ser atendidos. 
+
+\Hypertarget{class_banco_a678071133a40e26ce4cb8c0b2c09d370}\label{class_banco_a678071133a40e26ce4cb8c0b2c09d370} 
+\index{Banco@{Banco}!LeerNombres@{LeerNombres}}
+\index{LeerNombres@{LeerNombres}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{LeerNombres()}{LeerNombres()}}
+{\footnotesize\ttfamily void Banco\+::\+Leer\+Nombres (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{archivo }\end{DoxyParamCaption})}
+
+
+
+Lee los nombres de los clientes desde un archivo y los almacena en el arreglo de nombres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em archivo} & Ruta al archivo que contiene los nombres de los clientes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_banco_a27e9199b4c4b665c1f9aa013acd2b4b8}\label{class_banco_a27e9199b4c4b665c1f9aa013acd2b4b8} 
+\index{Banco@{Banco}!ObtenerNombre@{ObtenerNombre}}
+\index{ObtenerNombre@{ObtenerNombre}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ObtenerNombre()}{ObtenerNombre()}}
+{\footnotesize\ttfamily string Banco\+::\+Obtener\+Nombre (\begin{DoxyParamCaption}\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Obtiene un nombre del arreglo de nombres basado en un índice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & Índice del nombre a obtener. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nombre del cliente en el índice especificado. 
+\end{DoxyReturn}
+\Hypertarget{class_banco_a5b5dbbf8e230d9744aeaa1c998642d04}\label{class_banco_a5b5dbbf8e230d9744aeaa1c998642d04} 
+\index{Banco@{Banco}!ObtenerNombreAleatorio@{ObtenerNombreAleatorio}}
+\index{ObtenerNombreAleatorio@{ObtenerNombreAleatorio}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ObtenerNombreAleatorio()}{ObtenerNombreAleatorio()}}
+{\footnotesize\ttfamily string Banco\+::\+Obtener\+Nombre\+Aleatorio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene un nombre aleatorio del arreglo de nombres. 
+
+\begin{DoxyReturn}{Returns}
+Nombre de cliente aleatorio. 
+\end{DoxyReturn}
+\Hypertarget{class_banco_ac36178f58a1233d53f9683d9247a5a0f}\label{class_banco_ac36178f58a1233d53f9683d9247a5a0f} 
+\index{Banco@{Banco}!ObtenerNumClientesAtendidos@{ObtenerNumClientesAtendidos}}
+\index{ObtenerNumClientesAtendidos@{ObtenerNumClientesAtendidos}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ObtenerNumClientesAtendidos()}{ObtenerNumClientesAtendidos()}}
+{\footnotesize\ttfamily int Banco\+::\+Obtener\+Num\+Clientes\+Atendidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Número total de clientes que han sido atendidos. 
+\end{DoxyReturn}
+\Hypertarget{class_banco_a4861c966e2e225877c7068a84a43548a}\label{class_banco_a4861c966e2e225877c7068a84a43548a} 
+\index{Banco@{Banco}!ObtenerNumClientesPorAtender@{ObtenerNumClientesPorAtender}}
+\index{ObtenerNumClientesPorAtender@{ObtenerNumClientesPorAtender}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ObtenerNumClientesPorAtender()}{ObtenerNumClientesPorAtender()}}
+{\footnotesize\ttfamily int Banco\+::\+Obtener\+Num\+Clientes\+Por\+Atender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Número de clientes que aún están por atender. 
+\end{DoxyReturn}
+\Hypertarget{class_banco_aab1ba4b4e41086d5cc74b5db6bd63d36}\label{class_banco_aab1ba4b4e41086d5cc74b5db6bd63d36} 
+\index{Banco@{Banco}!ObtenerTiempoTotal@{ObtenerTiempoTotal}}
+\index{ObtenerTiempoTotal@{ObtenerTiempoTotal}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{ObtenerTiempoTotal()}{ObtenerTiempoTotal()}}
+{\footnotesize\ttfamily int Banco\+::\+Obtener\+Tiempo\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+El tiempo total de atención acumulado en todas las cajas. 
+\end{DoxyReturn}
+\Hypertarget{class_banco_a4c8af80465112589c7b3322cd8836cac}\label{class_banco_a4c8af80465112589c7b3322cd8836cac} 
+\index{Banco@{Banco}!operator=@{operator=}}
+\index{operator=@{operator=}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_banco}{Banco}} \& Banco\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_banco}{Banco}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Operador de asignación. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/omarpacheco/uni/4sem/\+Estructuras\+De\+Datos/\+Colas/\+Simulador\+Cola\+De\+Banco/\mbox{\hyperlink{_banco_8hpp}{Banco.\+hpp}}\end{DoxyCompactItemize}

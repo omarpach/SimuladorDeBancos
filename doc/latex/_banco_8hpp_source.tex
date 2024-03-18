@@ -1,0 +1,68 @@
+\doxysection{/\+Users/omarpacheco/uni/4sem/\+Estructuras\+De\+Datos/\+Colas/\+Simulador\+Cola\+De\+Banco/\+Banco.hpp}
+\hypertarget{_banco_8hpp_source}{}\label{_banco_8hpp_source}\mbox{\hyperlink{_banco_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BANCO\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BANCO\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cola_8hpp}{lib/Cola.hpp}}"{}}\ \textcolor{comment}{//\ Asegúrate\ de\ que\ la\ ruta\ y\ el\ archivo\ son\ correctos.}}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00007}00007\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00017}\mbox{\hyperlink{class_banco}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_banco}{Banco}}\ \{}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00019}00019\ \ \ \textcolor{keywordtype}{int}\ numDeCajas;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00020}00020\ \ \ \textcolor{keywordtype}{int}\ tiempoTotalDeAtencion;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00021}00021\ \ \ \textcolor{keywordtype}{int}\ tamNombres;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00022}00022\ \ \ \textcolor{keywordtype}{int}\ agregarClienteCola;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00023}00023\ \ \ \textcolor{keywordtype}{int}\ eliminarClienteCola;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00024}00024\ \ \ \textcolor{keywordtype}{string}*\ nombres;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00025}00025\ \ \ \mbox{\hyperlink{class_cola}{Cola<string>}}\ clientes;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00026}00026\ \ \ \mbox{\hyperlink{class_cola}{Cola<string>}}\ clientesAtendidos;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00027}00027\ \ \ \mbox{\hyperlink{class_cola}{Cola<string>}}\ clientesPorAtender;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00033}00033\ \ \ \textcolor{keyword}{struct\ }Caja\ \{}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{string}\ cliente;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ tiempoDeAtencion;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ tiempoTranscurrido;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ Actualizar(\mbox{\hyperlink{class_cola}{Cola<string>}}\ \&clientes,\ \mbox{\hyperlink{class_cola}{Cola<string>}}\ \&clientesAtendidos,\ \mbox{\hyperlink{class_cola}{Cola<string>}}\ \&clientesPorAtender);}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ Imprimir()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00048}00048\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00049}00049\ \ \ Caja*\ cajas;\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00051}00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00052}\mbox{\hyperlink{class_banco_a686e51b219dc175e432e91559298b259}{00052}}\ \ \ \mbox{\hyperlink{class_banco_a686e51b219dc175e432e91559298b259}{Banco}}();\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00053}\mbox{\hyperlink{class_banco_af69f9b0da3521d7c1e422f21dfd5829e}{00053}}\ \ \ \mbox{\hyperlink{class_banco_af69f9b0da3521d7c1e422f21dfd5829e}{\string~Banco}}();\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00054}\mbox{\hyperlink{class_banco_a68c57db423601cdd1df9a348b0596992}{00054}}\ \ \ \mbox{\hyperlink{class_banco_a68c57db423601cdd1df9a348b0596992}{Banco}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_banco}{Banco}}\ \&b);\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00055}\mbox{\hyperlink{class_banco_a4c8af80465112589c7b3322cd8836cac}{00055}}\ \ \ \mbox{\hyperlink{class_banco}{Banco}}\&\ \mbox{\hyperlink{class_banco_a4c8af80465112589c7b3322cd8836cac}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_banco}{Banco}}\ \&b);\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00061}\mbox{\hyperlink{class_banco_a678071133a40e26ce4cb8c0b2c09d370}{00061}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_a678071133a40e26ce4cb8c0b2c09d370}{LeerNombres}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ archivo);}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00068}\mbox{\hyperlink{class_banco_a27e9199b4c4b665c1f9aa013acd2b4b8}{00068}}\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_banco_a27e9199b4c4b665c1f9aa013acd2b4b8}{ObtenerNombre}}(\textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00072}\mbox{\hyperlink{class_banco_a5b5dbbf8e230d9744aeaa1c998642d04}{00072}}\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_banco_a5b5dbbf8e230d9744aeaa1c998642d04}{ObtenerNombreAleatorio}}();}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00075}\mbox{\hyperlink{class_banco_a8e234cfb6ca779d5265efd60ce34fd37}{00075}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_a8e234cfb6ca779d5265efd60ce34fd37}{ActualizarCajas}}();}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00078}\mbox{\hyperlink{class_banco_ad5583e0f964ec0b469842735e8d62f3b}{00078}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_ad5583e0f964ec0b469842735e8d62f3b}{ActualizarCola}}();}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00081}\mbox{\hyperlink{class_banco_ad13995120797f23630385504b986a668}{00081}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_ad13995120797f23630385504b986a668}{ImprimirCajas}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00084}\mbox{\hyperlink{class_banco_aab1ba4b4e41086d5cc74b5db6bd63d36}{00084}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_banco_aab1ba4b4e41086d5cc74b5db6bd63d36}{ObtenerTiempoTotal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00087}\mbox{\hyperlink{class_banco_ac36178f58a1233d53f9683d9247a5a0f}{00087}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_banco_ac36178f58a1233d53f9683d9247a5a0f}{ObtenerNumClientesAtendidos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00090}\mbox{\hyperlink{class_banco_a4861c966e2e225877c7068a84a43548a}{00090}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_banco_a4861c966e2e225877c7068a84a43548a}{ObtenerNumClientesPorAtender}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00093}\mbox{\hyperlink{class_banco_adb53ac7d5531d4e865f43016bf9604ba}{00093}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_adb53ac7d5531d4e865f43016bf9604ba}{ImprimirClientesAtendidos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00096}\mbox{\hyperlink{class_banco_a66bc0c665055d641f41ee4ab1eb4b95f}{00096}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_a66bc0c665055d641f41ee4ab1eb4b95f}{ImprimirClientesNoAtendidos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00099}\mbox{\hyperlink{class_banco_a414176f8869aaded79a4efcbeddd61f0}{00099}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_banco_a414176f8869aaded79a4efcbeddd61f0}{ImprimirClientesPorAtender}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00100}00100\ \};}
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_banco_8hpp_source_l00102}00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BANCO\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

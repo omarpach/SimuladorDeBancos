@@ -1,0 +1,7 @@
+PROJECT_NAME           = "Simulador de cola de un banco"
+INPUT                  = ../Banco.hpp ../lib/Cola.hpp ../lib/ListaSimple.hpp
+RECURSIVE              = NO
+EXTRACT_ALL            = YES
+SOURCE_BROWSER         = YES
+GENERATE_LATEX         = YES
+GENERATE_HTML          = YES

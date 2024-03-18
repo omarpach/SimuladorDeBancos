@@ -1,0 +1,281 @@
+\doxysection{Lista\+Simple.\+hpp}
+\hypertarget{_lista_simple_8hpp_source}{}\label{_lista_simple_8hpp_source}\index{/Users/omarpacheco/uni/4sem/EstructurasDeDatos/Colas/SimuladorColaDeBanco/lib/ListaSimple.hpp@{/Users/omarpacheco/uni/4sem/EstructurasDeDatos/Colas/SimuladorColaDeBanco/lib/ListaSimple.hpp}}
+\mbox{\hyperlink{_lista_simple_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ LISTASE\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ LISTASE\_HPP\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00004}\mbox{\hyperlink{_lista_simple_8hpp_ac760979bf753b3b1257ee457b1afbff6}{00004}}\ \textcolor{preprocessor}{\#define\ NO\_ENCONTRADO\ -\/1}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00016}00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00017}\mbox{\hyperlink{class_lista_simple}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lista_simple}{ListaSimple}}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00028}00028\ \ \ \textcolor{keyword}{struct\ }Elemento\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00029}00029\ \ \ \ \ T\ valor;\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00030}00030\ \ \ \ \ Elemento*\ siguiente;\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00037}00037\ \ \ \ \ Elemento(T\ valor,\ Elemento*\ siguiente\ =\ NULL);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00038}00038\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00040}00040\ \ \ Elemento*\ frente;\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00041}00041\ \ \ Elemento*\ fondo;\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00042}00042\ \ \ \textcolor{keywordtype}{int}\ tam;\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00044}00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00048}00048\ \ \ \mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{ListaSimple}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00053}00053\ \ \ \mbox{\hyperlink{class_lista_simple_a46e428ca1c3221912a53629f4b441774}{\string~ListaSimple}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00059}00059\ \ \ \mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{ListaSimple}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_lista_simple}{ListaSimple}}\ \&l);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00066}00066\ \ \ \mbox{\hyperlink{class_lista_simple}{ListaSimple}}\&\ \mbox{\hyperlink{class_lista_simple_a1b67fa72eebaf818859164fa886fa695}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_lista_simple}{ListaSimple}}\ \&l);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00068}00068\ \ \ \textcolor{comment}{//\ Metodos\ de\ Agregar}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00074}00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}{AgregarAlFrente}}(T\ valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00080}00080\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{AgregarAlFondo}}(T\ valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00087}00087\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b}{Agregar}}(\textcolor{keywordtype}{int}\ indice,\ T\ valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00089}00089\ \ \ \textcolor{comment}{//\ Metodos\ de\ Eliminar}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00094}00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{EliminarAlFrente}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00099}00099\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}{EliminarAlFondo}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00105}00105\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a933004cb56c049e59488fb61fe656520}{Eliminar}}(\textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00110}00110\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{Vaciar}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00116}00116\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00118}00118\ \ \ \textcolor{comment}{//\ Metodos\ de\ Utilidad}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00125}00125\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc}{BuscarValor}}(T\ valor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00132}00132\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6}{BuscarPosicion}}(T\ valor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00138}00138\ \ \ T\ \mbox{\hyperlink{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}{ObtenerFrente}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00144}00144\ \ \ T\ \mbox{\hyperlink{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}{ObtenerFondo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00151}00151\ \ \ T\ \mbox{\hyperlink{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e}{ObtenerElemento}}(\textcolor{keywordtype}{int}\ indice)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00158}00158\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a36ab261243b5376e9cd81592dce2701e}{ModificarElemento}}(\textcolor{keywordtype}{int}\ indice,\ T\ valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00164}00164\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{ObtenerTam}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00169}00169\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_ac880ee155457533548c51271e159f1b7}{Imprimir}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00175}00175\ \ \ T*\ \mbox{\hyperlink{class_lista_simple_a15c48423c8c05aaab67e884c2c580307}{Arreglo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00176}00176\ \};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00178}00178\ \textcolor{comment}{/*****\ Metodos\ fundamentales\ *****/}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00179}00179\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00180}00180\ \mbox{\hyperlink{class_lista_simple}{ListaSimple<T>::Elemento::Elemento}}(T\ valor,\ Elemento*\ siguiente\ \textcolor{comment}{/*\ =\ NULL\ */})\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00181}00181\ \ \ this-\/>valor\ =\ valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00182}00182\ \ \ this-\/>siguiente\ =\ siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00183}00183\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00185}00185\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00186}\mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{00186}}\ \mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{ListaSimple<T>::ListaSimple}}()\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00187}00187\ \ \ frente\ =\ fondo\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00188}00188\ \ \ tam\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00191}00191\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00192}\mbox{\hyperlink{class_lista_simple_a46e428ca1c3221912a53629f4b441774}{00192}}\ \mbox{\hyperlink{class_lista_simple_a46e428ca1c3221912a53629f4b441774}{ListaSimple<T>::\string~ListaSimple}}()\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00193}00193\ \ \ \mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{Vaciar}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00196}00196\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00197}\mbox{\hyperlink{class_lista_simple_a51f50e08e5fd9e264aa40bed2f5e2ccb}{00197}}\ \mbox{\hyperlink{class_lista_simple_a6692657a68960263f4f1d27df1385bbc}{ListaSimple<T>::ListaSimple}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_lista_simple}{ListaSimple}}\ \&l)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00198}00198\ \ \ frente\ =\ fondo\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00199}00199\ \ \ tam\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00200}00200\ \ \ *\textcolor{keyword}{this}\ =\ l;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00203}00203\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00204}\mbox{\hyperlink{class_lista_simple_a1b67fa72eebaf818859164fa886fa695}{00204}}\ \mbox{\hyperlink{class_lista_simple}{ListaSimple<T>}}\&\ \mbox{\hyperlink{class_lista_simple_a1b67fa72eebaf818859164fa886fa695}{ListaSimple<T>::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_lista_simple}{ListaSimple<T>}}\ \&l)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00205}00205\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&l)\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00206}00206\ \ \ \mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{Vaciar}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00207}00207\ \ \ Elemento*\ porAgregar\ =\ l.frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00208}00208\ \ \ \textcolor{keywordflow}{while}\ (porAgregar\ !=\ NULL)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00209}00209\ \ \ \ \ \mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{AgregarAlFondo}}(porAgregar-\/>valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00210}00210\ \ \ \ \ porAgregar\ =\ porAgregar-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00211}00211\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00212}00212\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00215}00215\ \textcolor{comment}{/*****\ Metodos\ de\ agregar\ *****/}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00216}00216\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00217}\mbox{\hyperlink{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}{00217}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}{ListaSimple<T>::AgregarAlFrente}}(T\ valor)\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00218}00218\ \ \ Elemento*\ nuevo\ =\ \textcolor{keyword}{new}\ Elemento(valor,\ frente);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00219}00219\ \ \ frente\ =\ nuevo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00220}00220\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}())\ fondo\ =\ nuevo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00221}00221\ \ \ ++tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00222}00222\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00224}00224\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00225}\mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{00225}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{ListaSimple<T>::AgregarAlFondo}}(T\ valor)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00226}00226\ \ \ Elemento*\ nuevo\ =\ \textcolor{keyword}{new}\ Elemento(valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00227}00227\ \ \ (\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}()\ ?\ frente\ :\ fondo-\/>siguiente)\ =\ nuevo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00228}00228\ \ \ fondo\ =\ nuevo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00229}00229\ \ \ ++tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00230}00230\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00232}00232\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00233}\mbox{\hyperlink{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b}{00233}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_aa2a73c1de4e156d5310b8121bbdc3f8b}{ListaSimple<T>::Agregar}}(\textcolor{keywordtype}{int}\ indice,\ T\ valor)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00234}00234\ \ \ \textcolor{keywordflow}{if}\ (indice\ <\ 0\ ||\ indice\ >\ tam)\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Indice\ fuera\ de\ rango"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00235}00235\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ 0)\ \mbox{\hyperlink{class_lista_simple_a44ea9359213ca10c4f5630fa2ce729eb}{AgregarAlFrente}}(valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00236}00236\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ tam)\ \mbox{\hyperlink{class_lista_simple_a884732e127ebce7b6af43b10fa1abff9}{AgregarAlFondo}}(valor);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00237}00237\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00238}00238\ \ \ \ \ Elemento*\ anterior\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00240}00240\ \ \ \ \ \ \ anterior\ =\ anterior-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00241}00241\ \ \ \ \ Elemento*\ nuevo\ =\ \textcolor{keyword}{new}\ Elemento(valor,\ anterior-\/>siguiente);}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00242}00242\ \ \ \ \ anterior-\/>siguiente\ =\ nuevo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00243}00243\ \ \ \ \ ++tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00244}00244\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00245}00245\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00247}00247\ \textcolor{comment}{/*****\ Metodos\ de\ eliminar\ *****/}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00248}00248\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00249}\mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{00249}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{ListaSimple<T>::EliminarAlFrente}}()\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00250}00250\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}())\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}La\ pila\ está\ vacía"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00251}00251\ \ \ Elemento*\ aux\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00252}00252\ \ \ frente\ =\ frente-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00253}00253\ \ \ \textcolor{keyword}{delete}\ aux;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00254}00254\ \ \ \textcolor{keywordflow}{if}\ (tam\ ==\ 1)\ fondo\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00255}00255\ \ \ -\/-\/tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00256}00256\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00258}00258\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00259}\mbox{\hyperlink{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}{00259}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}{ListaSimple<T>::EliminarAlFondo}}()\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00260}00260\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}())\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}La\ pila\ está\ vacía"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00261}00261\ \ \ Elemento*\ anterior\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00262}00262\ \ \ \textcolor{keywordflow}{while}\ (anterior\ !=\ NULL\ \&\&\ anterior-\/>siguiente\ !=\ fondo)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00263}00263\ \ \ \ \ anterior\ =\ anterior-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00264}00264\ \ \ \textcolor{keyword}{delete}\ fondo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00265}00265\ \ \ fondo\ =\ anterior;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00266}00266\ \ \ \textcolor{keywordflow}{if}\ (tam\ ==\ 1)\ frente\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00267}00267\ \ \ \textcolor{keywordflow}{else}\ anterior-\/>siguiente\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00268}00268\ \ \ -\/-\/tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00269}00269\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00271}00271\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00272}\mbox{\hyperlink{class_lista_simple_a933004cb56c049e59488fb61fe656520}{00272}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a933004cb56c049e59488fb61fe656520}{ListaSimple<T>::Eliminar}}(\textcolor{keywordtype}{int}\ indice)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00273}00273\ \ \ \textcolor{keywordflow}{if}\ (indice\ <\ 0\ ||\ indice\ >=\ tam)\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Indice\ fuera\ de\ rango"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00274}00274\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ 0)\ \mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{EliminarAlFrente}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00275}00275\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ tam-\/1)\ \mbox{\hyperlink{class_lista_simple_a39a292a6aed00c0b3e80efa12f6a7a2a}{EliminarAlFondo}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00276}00276\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00277}00277\ \ \ \ \ Elemento*\ anterior\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00279}00279\ \ \ \ \ \ \ anterior\ =\ anterior-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00280}00280\ \ \ \ \ Elemento*\ porBorrar\ =\ anterior-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00281}00281\ \ \ \ \ anterior-\/>siguiente\ =\ porBorrar-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00282}00282\ \ \ \ \ \textcolor{keyword}{delete}\ porBorrar;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00283}00283\ \ \ \ \ -\/-\/tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00284}00284\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00285}00285\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00287}00287\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00288}\mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{00288}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_adc4b76050f4eb139e223c8ae3e0e3c27}{ListaSimple<T>::Vaciar}}()\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00289}00289\ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}())\ \mbox{\hyperlink{class_lista_simple_afdc3967373903076c824e70d1222fad8}{EliminarAlFrente}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00290}00290\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00292}00292\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00293}\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{00293}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{ListaSimple<T>::EstaVacia}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00294}00294\ \ \ \textcolor{keywordflow}{return}\ tam\ ==\ 0;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00295}00295\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00297}00297\ \textcolor{comment}{/*****\ Metodos\ de\ utilidad\ *****/}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00298}00298\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00299}\mbox{\hyperlink{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc}{00299}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_lista_simple_a8d90eb0119d86e8cf49c118292c957bc}{ListaSimple<T>::BuscarValor}}(T\ valor)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00300}00300\ \ \ \textcolor{keywordflow}{for}\ (Elemento*\ actual\ =\ frente;\ actual\ !=\ NULL;\ actual\ =\ actual-\/>siguiente)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00301}00301\ \ \ \ \ \textcolor{keywordflow}{if}\ (actual-\/>valor\ ==\ valor)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00302}00302\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00303}00303\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00305}00305\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00306}\mbox{\hyperlink{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6}{00306}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lista_simple_a8e99a8260c42d9f798bd7ad42abe43d6}{ListaSimple<T>::BuscarPosicion}}(T\ valor)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00307}00307\ \ \ Elemento*\ actual;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00308}00308\ \ \ \textcolor{keywordtype}{int}\ pos;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00309}00309\ \ \ \textcolor{keywordflow}{for}\ (pos\ =\ 0;\ actual\ !=\ NULL\ \&\&\ actual-\/>valor\ !=\ valor;\ ++pos)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00310}00310\ \ \ \ \ actual\ =\ actual-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00311}00311\ \ \ \textcolor{keywordflow}{return}\ actual\ !=\ NULL\ ?\ pos\ :\ \mbox{\hyperlink{_lista_simple_8hpp_ac760979bf753b3b1257ee457b1afbff6}{NO\_ENCONTRADO}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00312}00312\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00314}00314\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00315}\mbox{\hyperlink{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}{00315}}\ T\ \mbox{\hyperlink{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}{ListaSimple<T>::ObtenerFrente}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00316}00316\ \ \ \textcolor{keywordflow}{return}\ frente-\/>valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00317}00317\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00319}00319\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00320}\mbox{\hyperlink{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}{00320}}\ T\ \mbox{\hyperlink{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}{ListaSimple<T>::ObtenerFondo}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00321}00321\ \ \ \textcolor{keywordflow}{return}\ fondo-\/>valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00322}00322\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00324}00324\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00325}\mbox{\hyperlink{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e}{00325}}\ T\ \mbox{\hyperlink{class_lista_simple_a4d1dc283b6baa88aead24a280b82391e}{ListaSimple<T>::ObtenerElemento}}(\textcolor{keywordtype}{int}\ indice)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00326}00326\ \ \ \textcolor{keywordflow}{if}\ (indice\ <\ 0\ ||\ indice\ >=\ tam)\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Indice\ fuera\ de\ rango"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00327}00327\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ 0)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_lista_simple_a4fdb82671f0f97cf1c2db827ae7fbc79}{ObtenerFrente}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00328}00328\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ tam-\/1)\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_lista_simple_abeabaa980fdca8341049f936a6905b3c}{ObtenerFondo}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00329}00329\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00330}00330\ \ \ \ \ Elemento*\ aux\ =\ frente-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00332}00332\ \ \ \ \ \ \ aux\ =\ aux-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00333}00333\ \ \ \ \ \textcolor{keywordflow}{return}\ aux-\/>valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00334}00334\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00335}00335\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00337}00337\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00338}\mbox{\hyperlink{class_lista_simple_a36ab261243b5376e9cd81592dce2701e}{00338}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_a36ab261243b5376e9cd81592dce2701e}{ListaSimple<T>::ModificarElemento}}(\textcolor{keywordtype}{int}\ indice,\ T\ valor)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00339}00339\ \ \ \textcolor{keywordflow}{if}\ (indice\ <\ 0\ ||\ indice\ >=\ tam)\ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}Indice\ fuera\ de\ rango"{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00340}00340\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ 0)\ frente-\/>valor\ =\ valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00341}00341\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (indice\ ==\ tam-\/1)\ fondo-\/>valor\ =\ valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00342}00342\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00343}00343\ \ \ \ \ Elemento*\ aux\ =\ frente-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00344}00344\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice;\ ++i)}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00345}00345\ \ \ \ \ \ \ aux\ =\ aux-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00346}00346\ \ \ \ \ aux-\/>valor\ =\ valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00347}00347\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00350}00350\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00351}\mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{00351}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{ListaSimple<T>::ObtenerTam}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00352}00352\ \ \ \textcolor{keywordflow}{return}\ tam;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00353}00353\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00355}00355\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00356}\mbox{\hyperlink{class_lista_simple_ac880ee155457533548c51271e159f1b7}{00356}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lista_simple_ac880ee155457533548c51271e159f1b7}{ListaSimple<T>::Imprimir}}()\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00357}00357\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_lista_simple_a3b4e6f98868b5723daa3f5f9b8dc92f3}{EstaVacia}}())}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00358}00358\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}(\ )"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00359}00359\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00360}00360\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}(\ "{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00361}00361\ \ \ \ \ Elemento*\ actual\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00362}00362\ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ NULL)\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00363}00363\ \ \ \ \ \ \ std::cout\ <<\ actual-\/>valor\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00364}00364\ \ \ \ \ \ \ actual\ =\ actual-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00365}00365\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00366}00366\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)b\(\backslash\)b\ )"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00367}00367\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00368}00368\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00370}00370\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00371}\mbox{\hyperlink{class_lista_simple_a15c48423c8c05aaab67e884c2c580307}{00371}}\ T*\ \mbox{\hyperlink{class_lista_simple_a15c48423c8c05aaab67e884c2c580307}{ListaSimple<T>::Arreglo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00372}00372\ \ \ T*\ arreglo\ =\ \textcolor{keyword}{new}\ T[\mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{ObtenerTam}}()];}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00373}00373\ \ \ Elemento*\ aux\ =\ frente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00374}00374\ \ \ \textcolor{keywordtype}{int}\ tamLista\ =\ \mbox{\hyperlink{class_lista_simple_a6b06a6be3584e0cc38adec317ee47fab}{ObtenerTam}}();}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00375}00375\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tamLista;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00376}00376\ \ \ \ \ arreglo[i]\ =\ aux-\/>valor;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00377}00377\ \ \ \ \ aux\ =\ aux-\/>siguiente;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00378}00378\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00379}00379\ \ \ \textcolor{keywordflow}{return}\ arreglo;}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00380}00380\ \}}
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{_lista_simple_8hpp_source_l00382}00382\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !LISTASE\_HPP\_INCLUDED}}
+
+\end{DoxyCode}
